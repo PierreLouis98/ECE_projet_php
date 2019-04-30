@@ -67,6 +67,8 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 <div id="conteneur">
     <fieldset>
         <legend> Connexion acheteur </legend>
+		<form action="connexion.php" method="post">
+		<table>
             <p>
                 <label for="catnom"> Login </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
@@ -76,11 +78,10 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
             <p>
-                <input type="submit" />
-                <input type="reset" />
-				
-
+                <input type="submit" name="button1" value="Soumettre"/>
             </p>
+		</table>
+		</form>
     </fieldset>
 </div>
 
@@ -93,7 +94,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 <div class="row">
 
 
-<a href="id_compte.html"> Creer un compte </a>
+<a href="creer_compte_acheteur.html"> Creer un compte </a>
 
 </div>
 
