@@ -9,7 +9,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 // On récupère les données de la page html 
  $login = isset($_POST["catnom"]) ? $_POST["catnom"] : "";
  $pass = isset($_POST["catdesct"]) ? $_POST["catdesct"] : "";
- $connexion = false;
+ $connexion = 0;
  
  if ($_POST["button1"]) 
 	{
@@ -22,15 +22,19 @@ $db_found = mysqli_select_db($db_handle, $database);
 			{
 				 if ($login == $data['identifiant'] && $pass == $data['password']) 
 				 {
-					 $connexion = true;
+					 if ($data['statut'] == 'client')
+						$connexion = 1;
+					 if ($data['statut'] == 'vendeur')
+						$connexion = 2;
+					 if ($data['statut'] == 'administrateur')
+						$connexion = 3;
 					 break;
 				 }
 			}
-			if ($connexion) {
-				echo "Connexion okay";
-			}
+			if ($connexion == 1) { header ('Location: Categorie.html');}
+			else if ($connexion == 3) { header ('Location: AddSuppVI.html');}
 			else {
-				echo "Mot de passe ou identifiant incorrecte";
+				header ('Location: login.html');
 			}
 		}
 		else {
