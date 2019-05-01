@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -10,7 +11,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="id_compte.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <script type="text/javascript">
 $(document).ready(function(){
 $('.header').height($(window).height());
@@ -20,14 +21,14 @@ $('.header').height($(window).height());
 <body>
 
 <nav class="navbar navbar-expand-md">
-<a class="navbar-brand" href="#"><img src="logo.png" height='75' width='90'/><br>	PENROSE</a>
+<a class="navbar-brand" href="#"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
 <button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="#">Categorie</a></li>
+href="Categorie.html">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.html">Vendre</a></li>
@@ -35,70 +36,46 @@ href="login.html">Vendre</a></li>
 href="login.html">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="#"><img class="panier" src="panier.png" height='70' width='70' </a>
+<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70' </a>
 </ul>
 </div>
 </nav>
 
-<div class="container features">
+<div class="container features2">
 
 
+<div>
+
+<div class="row">
+
+<div class="col-xs-2 col-sm-50">	
+<h3 class="feature-title2"> Supprimer Livre</h3>
+<img src="addlivre.jpg" height='250' width='400' >
+</div>
+
+<div class="col-xs-2 col-sm-1">
+<h3 class="feature-title2"> Supprimer Musique </h3>
+<img src="addmusique.jpg" height='250' width='400'><br><br><br>
+</div>
 
 
 <div class="row">
 
-
-
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
-
-
-<div id="conteneur">
-    <fieldset>
-        <legend> Connexion acheteur </legend>
-		<form action="login.php" method="post">
-		<table>
-            <p>
-                <label for="catnom"> Login </label>
-                <input class="text" type="text" name="catnom" id="catnom" value=""/>
-            </p>
-            <p>
-                <label for="catdesct"> Password </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
-            </p>
-            <p>
-                <input type="submit" name="button1" value="Soumettre"/>
-            </p>
-		</table>
-		</form>
-    </fieldset>
+<div class="col-xs-6 col-sm-50">
+<h3 class="feature-title2"> Supprimer Vetements</h3>
+<img src="addvet.png" height='250' width='400' >
 </div>
 
-
-</div>
-
-
-
- 
-<div class="row">
-
-
-<a href="creer_compte_acheteur.html"> Creer un compte </a>
-
+<div class="col-xs-6 col-sm-1">
+<h3 class="feature-title2"> Supprimer Sports </h3>
+<img src="addsport.jpg" height='250' width='400'>
 </div>
 
 </div>
+</div>
+</div>
+</div>
+
 <footer class="page-footer">
 <div class="container">
 <div class="row">
@@ -120,4 +97,3 @@ d'auteur: webDynamique.ece.fr </div>
 </footer>
 </body>
 </html>
-
