@@ -66,17 +66,32 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Connexion </legend>
-		<form action="login.php" method="post">
+        <legend> Compte vendeur </legend>
+		<form action="login.php" method="post" enctype="multipart/form-data">
 		<table>
             <p>
-                <label for="catnom"> Login </label>
+                <label for="catnom"> Pseudo </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Password </label>                   
+                <label for="catdesct"> Adresse Mail </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
+			<p>
+                <label for="catdesct"> Nom </label>                   
+                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+            </p>
+			
+     
+     <label for="mon_fichier"> Votre photo de profile ( max. 1 Mo) :</label><br />
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+	 
+	 
+     <label for="mon_fichier"> Votre image de fond préférée ( max. 1 Mo) :</label><br />
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+    
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>
             </p>
@@ -90,22 +105,11 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 
 
- 
-<div class="row">
-
-
-<p> <a href="creer_compte_acheteur.html"> Creer un compte acheteur </a>  <br> <br> <br>  </p> 
-<p> <a href="creer_compte_vendeur.html"> -       Creer un compte vendeur </a> </p>
-
-</div>
-
 </div>
 <footer class="page-footer">
 <div class="container">
 <div class="row">
-<div class="col-lg-8 col-md-8 col-sm-12">
 
-</div>
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
@@ -121,4 +125,3 @@ d'auteur: webDynamique.ece.fr </div>
 </footer>
 </body>
 </html>
-
