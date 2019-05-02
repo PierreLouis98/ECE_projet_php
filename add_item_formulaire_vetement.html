@@ -66,16 +66,51 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Connexion </legend>
-		<form action="login.php" method="post">
+        <legend> Ajout items vetements </legend>
+		<form action="login.php" method="post" >
 		<table>
             <p>
-                <label for="catnom"> Login </label>
+                <label for="catnom"> Type  </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Password </label>                   
+                <label for="catdesct"> Marque </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+            </p>
+			<p>
+               <label> Homme
+<input type="radio" name="Homme" value="Homme">
+</label>
+<label> Femme
+<input type="radio" name="Femme" value="Femme">
+</label>
+            </p>
+			
+			
+			
+			<p>
+                <select name="taille" id="catdesct" >
+<option>XS</option>
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+
+</select>
+            </p>
+			<p>
+			
+     
+     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br /> <br/>
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+	 
+	 <label for="mon_fichier"> Un second photo de l'article ( max. 1 Mo) :</label><br />
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+	 
             </p>
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>
@@ -90,22 +125,11 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 
 
- 
-<div class="row">
-
-
-<p> <a href="creer_compte_acheteur.html"> Creer un compte acheteur </a>  <br> <br> <br>  </p> 
-<p> <a href="creer_compte_vendeur.html"> -       Creer un compte vendeur </a> </p>
-
-</div>
-
 </div>
 <footer class="page-footer">
 <div class="container">
 <div class="row">
-<div class="col-lg-8 col-md-8 col-sm-12">
 
-</div>
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
@@ -121,4 +145,3 @@ d'auteur: webDynamique.ece.fr </div>
 </footer>
 </body>
 </html>
-
