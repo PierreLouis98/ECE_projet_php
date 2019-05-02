@@ -1,11 +1,11 @@
 body {
 padding: 0px;
 margin: 0px;
-background: #f2f6e9;
+background: #F8F8FF;
 }
 /*--- navigation bar ---*/
 .navbar {
-background:#DC143C;
+background:#8B0000;
 padding: 20px;
 font-size: 25px;
 }
@@ -128,14 +128,14 @@ background-color: #333;
 border: 1px solid #333;
 }
 .page-footer {
-background-color: #222;
+background-color: #555;
 color: #ccc;
 padding: 20px;
 padding-bottom: 10px;
 margin-right: -140px;
 }
 .page-footer2 {
-background-color: #222;
+background-color: #555;
 color: #ccc;
 padding: 20px;
 padding-bottom: 10px;
@@ -143,7 +143,7 @@ margin-top: 1000px;
 margin-right: -850px;
 }
 .page-footer3 {
-background-color: #222;
+background-color: #555;
 color: #ccc;
 padding: 20px;
 padding-bottom: 10px;
