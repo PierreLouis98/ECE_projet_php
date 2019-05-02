@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 01 mai 2019 à 14:11
+-- Généré le :  jeu. 02 mai 2019 à 13:16
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -63,17 +63,20 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `statut` varchar(255) NOT NULL,
   `identifiant` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `connected` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `logins`
 --
 
-INSERT INTO `logins` (`ID`, `statut`, `identifiant`, `password`) VALUES
-(1, 'administrateur', 'JeanMich', 'motdepasse123'),
-(2, 'vendeur', 'thib96', 'azerty98'),
-(3, 'client', 'maxence', 'mariejoseph');
+INSERT INTO `logins` (`ID`, `statut`, `identifiant`, `password`, `connected`) VALUES
+(1, 'administrateur', 'JeanMich', 'motdepasse123', 0),
+(2, 'vendeur', 'thib96', 'azerty98', 0),
+(3, 'client', 'maxence', 'mariejoseph', 0),
+(5, 'vendeur', 'pierre@me.com', 'cez98', 0),
+(6, 'vendeur', 'pierre@me.com', 'Araignee Man', 0);
 
 -- --------------------------------------------------------
 
@@ -87,10 +90,18 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `nom` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `pseudo` varchar(255) NOT NULL,
-  `fond` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `fond` varchar(1000) NOT NULL,
+  `photo` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`id`, `nom`, `mail`, `pseudo`, `fond`, `photo`) VALUES
+(3, 'Mellerio', 'cesar.mellerio@edu.ece.fr', 'Araignee Man', '1048576', '1048576'),
+(6, 'Henry', 'pierre@me.com', 'Araignee Man', '1048576', '1048576');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
