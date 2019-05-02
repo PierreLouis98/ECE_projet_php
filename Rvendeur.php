@@ -28,56 +28,23 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.html">Categorie</a></li>
+href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70' ></a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 </ul>
 </div>
 </nav>
 
-<div class="container features">
-
-
-<div>
-
-<div class="row">
-
-<div class="col-xs-2 col-sm-50">	
-<h3 class="feature-title"> Ajouter Livre</h3>
-<a href="add_item_formulaire_musique_livre.html"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
+<div> LISTE VENDEUR
 </div>
 
-<div class="col-xs-2 col-sm-50">
-<h3 class="feature-title"> Ajouter Musique </h3>
-<a href="add_item_formulaire_musique_livre.html"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
-</div>
-</div>
-
-
-<div class="row">
-
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Ajouter Vetements</h3>
-<a href="add_item_formulaire_vetement.html"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
-</div>
-
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Ajouter Sports </h3>
-<a href="add_item_formulaire_sport.html"><img src="addsport.jpg" height='250' width='400'> </a>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-<footer class="page-footer">
+<footer class="page-footer3">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">

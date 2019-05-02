@@ -27,15 +27,15 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.html">Categorie</a></li>
+href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70' > </a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
 </ul>
 </div>
 </nav>
@@ -66,31 +66,33 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Compte vendeur </legend>
-		<form action="login.php" method="post" enctype="multipart/form-data">
+        <legend> Ajout items Sports et Loisirs </legend>
+		<form action="login1.php" method="post" >
 		<table>
             <p>
-                <label for="catnom"> Pseudo </label>
+                <label for="catnom"> Type  </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Adresse Mail </label>                   
+                <label for="catdesct"> Marque </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
 			<p>
-                <label for="catdesct"> Nom </label>                   
+                <label for="catdesct"> Description </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
 			
+			<p>
+                <label for="catdesct"> Prix </label>                   
+                <input type="number" name="prix" value="0€" id="catdesct" />
+            </p>
+			
      
-     <label for="mon_fichier"> Votre photo de profile ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="mon_fichier" id="mon_fichier" /><br />
 	 
 	 
-     <label for="mon_fichier"> Votre image de fond préférée ( max. 1 Mo) :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
     
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>

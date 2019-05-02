@@ -27,15 +27,15 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.html">Categorie</a></li>
+href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70' ></a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
 </ul>
 </div>
 </nav>
@@ -66,34 +66,52 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Ajout items musique ou livre </legend>
-		<form action="login.php" method="post" >
+        <legend> Ajout items vetements </legend>
+		<form action="login1.php" method="post" >
 		<table>
             <p>
-                <label for="catnom"> Nom  </label>
+                <label for="catnom"> Type  </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Auteur </label>                   
+                <label for="catdesct"> Marque </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
 			<p>
-			    <label for="catdesct"> Date </label>  
-                <input type="date" name="d" value="<?php echo $today?>">
+               <label> Homme
+<input type="radio" name="Homme" value="Homme">
+</label>
+<label> Femme
+<input type="radio" name="Femme" value="Femme">
+</label>
             </p>
+			
+			
 			
 			<p>
-                <label for="catdesct"> Prix </label>                   
-                <input type="number" name="prix" value="0€" />
+                <select name="taille" id="catdesct" >
+<option>XS</option>
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+
+</select>
             </p>
+			<p>
 			
      
-     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br /> <br/>
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="mon_fichier" id="mon_fichier" /><br />
 	 
+	 <label for="mon_fichier"> Un second photo de l'article ( max. 1 Mo) :</label><br />
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
 	 
-    
+            </p>
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>
             </p>

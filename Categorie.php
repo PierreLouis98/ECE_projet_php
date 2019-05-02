@@ -28,37 +28,57 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.html">Categorie</a></li>
+href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70' ></a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
 </ul>
 </div>
 </nav>
 
-<div class="container features">
+<div class="container features2">
+
+
+<div>
+<form action="Liste_item1.php" method="post">
+<div class="row">
+
+<div class="col-xs-2 col-sm-50">
+	
+<h3 class="feature-title2"> Livres/Comics</h3>
+<img src="addlivre.jpg" height='250' width='400'>
+
+
+</div>
+
+<div class="col-xs-2 col-sm-1">
+<h3 class="feature-title2"> Albums/Musique </h3>
+<img src="addmusique.jpg" height='250' width='400'>
+</div>
 
 
 <div class="row">
+
 <div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Ajouter Item</h3>
-<a href="Additem.html" ><img src="additem.jpg" height='250' width='400' > </a> <br><br><br>
+<h3 class="feature-title2"> Vetements</h3>
+<img src="addvet.png" height='250' width='400' >
+</div>
+
+<div class="col-xs-6 col-sm-1">
+<h3 class="feature-title2"> Sports/Loisirs </h3>
+<img src="addsport.jpg" height='250' width='400'>
+</div>
+
+</div>
 </div>
 
 
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Supprimer Item </h3>
-<a href="Ritem.html" ><img src="ritem.jpg" height='250' width='400'> </a> <br><br><br>
-</div>
-
-
-
-
+</form>
 </div>
 </div>
 

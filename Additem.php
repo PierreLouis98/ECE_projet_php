@@ -28,15 +28,15 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.html">Categorie</a></li>
+href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.html">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.html"><img class="panier" src="panier.png" height='70' width='70'> </a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
 </ul>
 </div>
 </nav>
@@ -47,32 +47,32 @@ href="login.html">Mon Compte</a></li>
 <div>
 
 <div class="row">
-<div class="col-xs-2 col-sm-50">
-<h3 class="feature-title"> Ajouter Vendeur</h3>
-<a href="Addvendeur.html" ><img src="addvendeur.jpg" height='250' width='400' > </a> <br><br><br>
+
+<div class="col-xs-2 col-sm-50">	
+<h3 class="feature-title"> Ajouter Livre</h3>
+<a href="add_item_formulaire_musique_livre.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
 </div>
 
-
 <div class="col-xs-2 col-sm-50">
-<h3 class="feature-title"> Supprimer Vendeur </h3>
-<a href="Rvendeur.html" ><img src="rvendeur.jpg" height='250' width='400'> </a> <br><br><br>
+<h3 class="feature-title"> Ajouter Musique </h3>
+<a href="add_item_formulaire_musique_livre.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
 </div>
 </div>
 
 
 <div class="row">
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Ajouter Item</h3>
-<a href="Additem.html" ><img src="additem.jpg" height='250' width='400' > </a> <br><br><br>
-</div>
 
 <div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Supprimer Item </h3>
-<a href="Ritem.html" ><img src="ritem.jpg" height='250' width='400'> </a> <br><br><br>
-</div>
+<h3 class="feature-title"> Ajouter Vetements</h3>
+<a href="add_item_formulaire_vetement.php"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
 </div>
 
+<div class="col-xs-6 col-sm-50">
+<h3 class="feature-title"> Ajouter Sports </h3>
+<a href="add_item_formulaire_sport.php"><img src="addsport.jpg" height='250' width='400'> </a>
+</div>
 
+</div>
 </div>
 </div>
 </div>
