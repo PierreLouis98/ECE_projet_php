@@ -91,7 +91,6 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 			<p>
                 <select name="taille" id="catdesct" >
 <option>XS</option>
-<option>XS</option>
 <option>S</option>
 <option>M</option>
 <option>L</option>
@@ -100,14 +99,14 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 </select>
             </p>
-			<p>
+			<p> 
 			
      
-     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br /> <br/>
+     <label for="mon_fichier"> Photo de l'article ( max. 1 Mo) :</label><br /> <br/> 
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br />
 	 
-	 <label for="mon_fichier"> Un second photo de l'article ( max. 1 Mo) :</label><br />
+	 <label for="mon_fichier"> Autre Photo de l'Article:</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="mon_fichier" id="mon_fichier" /><br />
 	 

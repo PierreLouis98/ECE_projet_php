@@ -88,9 +88,9 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			
      
-     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br /> <br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br /> <br />
 	 
 	 
     

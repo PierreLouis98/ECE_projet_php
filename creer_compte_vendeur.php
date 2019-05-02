@@ -83,14 +83,14 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			
      
-     <label for="mon_fichier"> Votre photo de profile ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> Photo de profil ( max. 1 Mo) :</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br />
 	 
 	 
-     <label for="mon_fichier"> Votre image de fond préférée ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> Image de fond préférée :</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br />
     
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>

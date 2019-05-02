@@ -94,7 +94,8 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 	 
 	 
     
-            <p>
+            <p> 
+            	<br>
                 <input type="submit" name="button1" value="Soumettre"/>
             </p>
 		</table>

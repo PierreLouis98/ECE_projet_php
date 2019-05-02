@@ -56,40 +56,24 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 <div class="container features">
 
 
-<div>
-
-<div class="row">
-
-<div class="col-xs-6 col-sm-50">
-
-
-</div>
-
-
-
-<div class="col-xs-6 col-sm-1">
-
-
 <form>
-        <h1>Formulaire de paiement</h1>
+        <h1>Créer Compte Acheteur</h1>
         <p>Les champs obligatoires sont suivis par <strong><abbr title="required">*</abbr></strong>.</p>
         <section>
             <h2>Informations de contact</h2>
             <fieldset>
-              <legend>Qualité</legend>
               <ul>
-                  <li>
+                 
                     <label for="title_1">
                       <input type="radio" id="title_1" name="title" value="M." >
                       Monsieur
                     </label>
-                  </li>
-                  <li>
+                 
                     <label for="title_2">
                       <input type="radio" id="title_2" name="title" value="Mme.">
                       Madame
                     </label>
-                  </li>
+                  
               </ul>
             </fieldset>
             <p>
@@ -100,8 +84,22 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
               <input type="text" id="name" name="username">
             </p>
             <p>
+              <label for="name">
+                <span>Prénom :</span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+            <p>
+              <label for="name">
+                <span>Adresse :</span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+            <p>
               <label for="mail">
-                <span>e-mail :</span>
+                <span>E-mail :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
               <input type="email" id="mail" name="usermail">
@@ -143,14 +141,9 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
         </section>
         <section>
-            <p> <button type="submit">Valider le paiement</button> </p>
+            <p> <button type="submit">Créer Compte</button> </p>
         </section>
     </form>
-
-</div>
-
-
-</div>
 
 </div>
 
