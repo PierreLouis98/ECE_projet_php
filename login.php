@@ -10,7 +10,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="id_compte.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <script type="text/javascript">
 $(document).ready(function(){
 $('.header').height($(window).height());
@@ -27,7 +27,7 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.php">Categorie</a></li>
+href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="verif_vendeur.php">Vendre</a></li>
@@ -36,6 +36,7 @@ href="verif_admi.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
 href="verif_acheteur.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
+<a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
 </div>
 </nav>

@@ -27,7 +27,7 @@ $('.header').height($(window).height());
 <div class="collapse navbar-collapse" id="main-navigation">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
-href="Categorie.php">Categorie</a></li>
+href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.php">Vendre</a></li>
@@ -36,6 +36,7 @@ href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
+<a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
 </div>
 </nav>
@@ -50,7 +51,7 @@ $bouton4 = isset($_POST["button4"])? true : false;
 $database = "ece_amazon";
 //connectez-vous dans votre BDD
 //Rappel: votre serveur = localhost et votre login = root et votre password = <rien>
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost', 'root', 'root');
 $db_found = mysqli_select_db($db_handle, $database);
 
 	
