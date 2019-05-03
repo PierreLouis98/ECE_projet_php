@@ -29,3 +29,4 @@ $db_found = mysqli_select_db($db_handle, $database);
 //fermer la connexion
 mysqli_close($db_handle);
 ?>
+
