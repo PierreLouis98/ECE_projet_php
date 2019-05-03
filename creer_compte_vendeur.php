@@ -16,6 +16,29 @@ $(document).ready(function(){
 $('.header').height($(window).height());
 });
 </script>
+	<?php // CODE PHP CORRESPONSDANT
+		$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+		$mail = isset($_POST["mail"])? $_POST["mail"] : "";
+		$nom = isset($_POST["nom"])? $_POST["nom"] : "";
+		$profil = isset($_POST["profil"])? $_POST["profil"] : "";
+		$profil2 = basename($profil);
+		$fond = isset($_POST["fond"])? $_POST["fond"] : "";
+		$fond2 = basename($fond);
+		$database = "ece_amazon";
+		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_found = mysqli_select_db($db_handle, $database);
+		$bouton = isset($_POST["button1"])? $_POST["button1"] : "";
+		if ($bouton){
+		if ($db_found) {
+				$sql = "INSERT INTO vendeur(nom, mail, pseudo, fond, photo) VALUES('$nom', '$mail', '$pseudo', '$fond2', '$profil2')";
+				$result = mysqli_query($db_handle, $sql);
+				$sql = "INSERT INTO logins(identifiant, password, statut) VALUES('$mail', '$pseudo', 'vendeur')";
+				$result = mysqli_query($db_handle, $sql);
+			}		
+		else {echo "Database not found";}
+		}
+		mysqli_close($db_handle);
+	?>
 </head>
 <body>
 
@@ -42,56 +65,35 @@ href="login.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
-
-
-
-
 <div class="row">
-
-
-
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
-
-
 <div id="conteneur">
     <fieldset>
         <legend> Compte vendeur </legend>
-		<form action="login1.php" method="post" enctype="multipart/form-data">
+		<form method="post">
 		<table>
             <p>
-                <label for="catnom"> Pseudo </label>
-                <input class="text" type="text" name="catnom" id="catnom" value=""/>
+                <label for="pseudo"> Pseudo </label>
+                <input class="text" type="text" name="pseudo" id="pseudo" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Adresse Mail </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+                <label for="mail"> Adresse Mail </label>                   
+                <input class="text" type="text" name="mail" id="mail" value=""/>
             </p>
 			<p>
-                <label for="catdesct"> Nom </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+                <label for="nom"> Nom </label>                   
+                <input class="text" type="text" name="nom" id="nom" value=""/>
             </p>
 			
      
-     <label for="mon_fichier"> Photo de profil ( max. 1 Mo) :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br />
+     <!--<label for="profil"> Photo de profil ( max. 1 Mo) :</label><br />
+     <input type="hidden" name="profil" />
+     <input type="file" name="profil" id="profil" /><br /> <br />-->
+	 <input type="file" name="profil">
 	 
-	 
-     <label for="mon_fichier"> Image de fond préférée :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br />
+     <!--<label for="fond"> Image de fond préférée :</label><br />
+     <input type="hidden" name="fond" />
+     <input type="file" name="fond" id="fond" /><br /> <br />-->
+	 <input type="file" name="fond">
     
             <p>
                 <input type="submit" name="button1" value="Soumettre"/>
@@ -100,13 +102,9 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 		</form>
     </fieldset>
 </div>
-
-
+</div>
 </div>
 
-
-
-</div>
 <footer class="page-footer">
 <div class="container">
 <div class="row">
