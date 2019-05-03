@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -40,41 +41,15 @@ href="login.php">Mon Compte</a></li>
 </div>
 </nav>
 
+<div> Titre : <br>
+Auteur : <br>
+Date : <br> <br>
+Prix : <br>
 
-<?php
-$bouton1 = isset($_POST["button1"])? true : false;
-$bouton2 = isset($_POST["button2"])? true : false;
-$bouton3 = isset($_POST["button3"])? true : false;
-$bouton4 = isset($_POST["button4"])? true : false;
-//identifier votre BDD
-$database = "ece_amazon";
-//connectez-vous dans votre BDD
-//Rappel: votre serveur = localhost et votre login = root et votre password = <rien>
-$db_handle = mysqli_connect('localhost', 'root', 'root');
-$db_found = mysqli_select_db($db_handle, $database);
+Ajouter au Panier
+</div>
 
-	
-		if ($db_found){
-			if ($bouton1){$sql = "SELECT Titre FROM items WHERE Categorie='Vetements'";}
-			if ($bouton2){$sql = "SELECT Titre FROM items WHERE Categorie='Livres'";}
-			if ($bouton3){$sql = "SELECT Titre FROM items WHERE Categorie='Sports'";}
-			if ($bouton4){$sql = "SELECT Titre FROM items WHERE Categorie='Musiques'";}
-			$result = mysqli_query($db_handle, $sql);
-			//on trouve le livre recherché
-			while ($data = mysqli_fetch_assoc($result)) { 
-				echo " <br>  - <a href=FicheDescript.php>" .$data['Titre']. "</a><br>";
-				echo "<br>";
-			}
-		}
-		else {
-			echo "Database not found";
-		}
-//fermer la connexion
-mysqli_close($db_handle);
-?>
-
-
-<footer class="page-footer">
+<footer class="page-footer3">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">
@@ -83,9 +58,9 @@ mysqli_close($db_handle);
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
-info@webDynamique.ece.fr <br>
-+33 01 02 03 04 05 <br>
-+33 01 03 02 05 04
+penrose@edu.ece.fr <br>
+06 22 61 69 40 <br>
+06 13 99 67 66
 </h4>
 
 </div>

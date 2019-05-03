@@ -31,56 +31,50 @@ $('.header').height($(window).height());
 href="Categorie.php">Categorie</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_vendeur.php">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_admi.php">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_acheteur.php">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 </ul>
 </div>
 </nav>
 
+<form action="Liste_item1.php" method="post">
 <div class="container features2">
 
 
-<div>
-<form action="Liste_item1.php" method="post">
 <div class="row">
 
-<div class="col-xs-2 col-sm-50">
-	
-<h3 class="feature-title2"> Livres/Comics</h3>
-<img src="addlivre.jpg" height='250' width='400'>
-
-
+<div class="col-xs-6 col-sm-50">	
+<input class="button1" type="submit" value="Livres" name="button2"> 
+<img src="addlivre.jpg" height='250' width='400' > <br><br>
 </div>
 
-<div class="col-xs-2 col-sm-1">
-<h3 class="feature-title2"> Albums/Musique </h3>
-<img src="addmusique.jpg" height='250' width='400'>
+<div class="col-xs-6 col-sm-50">
+<input class="button2" type="submit" value="Albums" name="button4">
+<img src="addmusique.jpg" height='250' width='400'><br><br>
 </div>
 
 
 <div class="row">
 
 <div class="col-xs-6 col-sm-50">
-<h3 class="feature-title2"> Vetements</h3>
-<img src="addvet.png" height='250' width='400' >
+<input class="button3" type="submit" value="Vetements" name="button1">
+<img src="addvet.png" height='250' width='400' > <br><br>
 </div>
 
-<div class="col-xs-6 col-sm-1">
-<h3 class="feature-title2"> Sports/Loisirs </h3>
-<img src="addsport.jpg" height='250' width='400'>
+<div class="col-xs-6 col-sm-50">
+<input class="button4" type="submit" value="Sports" name="button3">  
+<img class="sport" src="addsport.jpg" height='250' width='400' > <br><br>
 </div>
 
 </div>
 </div>
-
-
+</div>
+</div>
 </form>
-</div>
-</div>
 
 <footer class="page-footer">
 <div class="container">
@@ -91,9 +85,9 @@ href="verif_acheteur.php">Mon Compte</a></li>
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
-penrose@edu.ece.fr <br>
-06 22 61 69 40 <br>
-06 13 99 67 66
+info@webDynamique.ece.fr <br>
++33 01 02 03 04 05 <br>
++33 01 03 02 05 04
 </h4>
 
 </div>
