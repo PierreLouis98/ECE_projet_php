@@ -43,6 +43,38 @@ href="login.php">Mon Compte</a></li>
 </nav>
 
 <div> LISTE LIVRES
+	<?php // CODE PHP CORRESPONSDANT
+		$database = "ece_amazon";
+		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_found = mysqli_select_db($db_handle, $database);
+		
+		if ($db_found) 
+		{
+			if(isset($_GET['show']))
+			{
+				$product=$_GET['show'];
+				$sql = "DELETE FROM items WHERE Titre='$product'";
+				$result = mysqli_query($db_handle, $sql);
+				$sql = "DELETE FROM musicslivres WHERE titre='$product'";
+				$result = mysqli_query($db_handle, $sql);
+				echo "Delete successful.";
+			}
+			$sql = "SELECT * FROM items WHERE Categorie='Livres'";
+			$result = mysqli_query($db_handle, $sql);
+			while($data = mysqli_fetch_assoc($result))
+			{
+				?>
+				<br><br>
+				
+				<div class="texte-2">
+					<a href="?show=<?php echo $data["Titre"];?>"><h2><?php echo $data["Titre"];?></h2></a>
+				</div>	
+				<?php 
+			}	
+		}		
+		else {echo "Database not found";}
+		mysqli_close($db_handle);
+	?>
 </div>
 
 <footer class="page-footer3">

@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <html>
 <head>
 <title>TP sur Bootstrap</title>
@@ -50,12 +48,25 @@ href="login.php">Mon Compte</a></li>
 		
 		if ($db_found) 
 		{
-				$sql = "SELECT * FROM vendeur";
+			if(isset($_GET['show']))
+			{
+				$product=$_GET['show'];
+				$sql = "DELETE FROM vendeur WHERE nom='$product'";
 				$result = mysqli_query($db_handle, $sql);
-				while ($data = mysqli_fetch_assoc($result)) { 
-				echo " <br>  - <input type=submit value=" .$data['nom']. " onclick=runMyFunction('".$data['nom']."')><br>";
-				echo "<br>";
-				}
+				echo "Delete successful.";
+			}
+			$sql = "SELECT * FROM vendeur";
+			$result = mysqli_query($db_handle, $sql);
+			while($data = mysqli_fetch_assoc($result))
+			{
+				?>
+				<br><br>
+				
+				<div class="texte-2">
+					<a href="?show=<?php echo $data["nom"];?>"><h2><?php echo $data["nom"];?></h2></a>
+				</div>	
+				<?php 
+			}	
 		}		
 		else {echo "Database not found";}
 		mysqli_close($db_handle);
