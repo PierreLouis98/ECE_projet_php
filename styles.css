@@ -129,6 +129,38 @@ margin-bottom: 20px;
 margin-left: 250px;
 text-transform: uppercase;
 }
+.feature-title3{
+color: #333;
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 20px;
+margin-left:480px;
+text-transform: uppercase;
+}
+.feature-title4{
+color: #333;
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 20px;
+margin-left:460px;
+text-transform: uppercase;
+}
+.feature-title5{
+color: #333;
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 20px;
+margin-left:460px;
+text-transform: uppercase;
+}
+.feature-title6{
+color: #333;
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 20px;
+margin-left:430px;
+text-transform: uppercase;
+}
 .features img {
 -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -181,8 +213,16 @@ background-color: #555;
 color: #ccc;
 padding: 20px;
 padding-bottom: 10px;
-margin-right: px;
+margin-top: 450px;
 }
+.page-footer3 {
+background-color: #555;
+color: #ccc;
+padding: 20px;
+padding-bottom: 10px;
+margin-top: 450px;
+}
+
 .contact{
 	font-size: 12px;
 	margin-left: -800px;
@@ -191,6 +231,7 @@ margin-right: px;
 	font-size: 12px;
 	margin-left: -50px;
 }
+
 .copyright{
 	font-size:10px;
 	text-align: center;
@@ -262,4 +303,7 @@ input[type=button]:active {
 
 .bouton{
 background-color:#beedb5;
+}
+.testt{
+font-size: 1002px;
 }

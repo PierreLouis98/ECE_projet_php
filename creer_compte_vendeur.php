@@ -46,7 +46,7 @@ $('.header').height($(window).height());
 <body>
 
 <nav class="navbar navbar-expand-md">
-<a class="navbar-brand" href="#"><img src="logo.png" height='75' width='90'/><br>	PENROSE</a>
+<a class="navbar-brand" href="https://sites.google.com/site/tpe44lesillusionsoptiques/info-presse-classeur/le-triangle-de-penrose"><img src="logo.png" height='75' width='90'/><br>	PENROSE</a>
 <button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -54,7 +54,7 @@ $('.header').height($(window).height());
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
 href="Categorie.php">Catégories</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
+<li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"

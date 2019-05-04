@@ -21,7 +21,7 @@ $('.header').height($(window).height());
 <body>
 
 <nav class="navbar navbar-expand-md">
-<a class="navbar-brand" href="#"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
+<a class="navbar-brand" href="https://sites.google.com/site/tpe44lesillusionsoptiques/info-presse-classeur/le-triangle-de-penrose"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
 <button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -29,7 +29,7 @@ $('.header').height($(window).height());
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
 href="Categorie.php">Catégories</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
+<li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
@@ -50,13 +50,13 @@ href="login.php">Mon Compte</a></li>
 
 <div class="row">
 
-<div class="col-xs-2 col-sm-50">	
-<h3 class="feature-title"> Livres </h3>
+<div class="col-xs-5 col-sm-10">	
+<h3 class="feature-title3"> LIVRES </h3>
 <a href="liste_livre_fiche.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
 </div>
 
-<div class="col-xs-2 col-sm-50">
-<h3 class="feature-title"> Musique </h3>
+<div class="col-xs-5 col-sm-10">
+<h3 class="feature-title4"> MUSIQUES </h3>
 <a href="liste_musique_fiche.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
 </div>
 </div>
@@ -64,13 +64,13 @@ href="login.php">Mon Compte</a></li>
 
 <div class="row">
 
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Vetements </h3>
+<div class="col-xs-5 col-sm-10">
+<h3 class="feature-title5"> VÊTEMENTS </h3>
 <a href="liste_vetements_fiche.php"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
 </div>
 
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Sports </h3>
+<div class="col-xs-5 col-sm-10">
+<h3 class="feature-title6"> SPORTS/LOISIRS </h3>
 <a href="liste_sport_fiche.php"><img src="addsport.jpg" height='250' width='400'> </a>
 </div>
 

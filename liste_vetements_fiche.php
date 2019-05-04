@@ -21,7 +21,7 @@ $('.header').height($(window).height());
 <body>
 
 <nav class="navbar navbar-expand-md">
-<a class="navbar-brand" href="#"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
+<a class="navbar-brand" href="https://sites.google.com/site/tpe44lesillusionsoptiques/info-presse-classeur/le-triangle-de-penrose"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
 <button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -29,7 +29,7 @@ $('.header').height($(window).height());
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link"
 href="Categorie.php">Catégories</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
+<li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
 href="verif_vendeur.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
@@ -57,29 +57,25 @@ if($db_found)
 		$product=$_GET['show'];
 		$sql = "SELECT * from items WHERE Titre='$product'";
 		$result = mysqli_query($db_handle, $sql);
-		
-		if( $result ){
-
-        $data = mysqli_fetch_assoc(mysqli_query($db_handle, $sql));
+		$data = mysqli_fetch_assoc($result);
 		$description=$data["Description"];
 		//$description_finale=wordwrap($description,200,'<br />',false);
 		?>
 		<br>
-		<div class="texte-2" style="text-align: center;">
-			<img src="imgs/<?php echo $data["Titre"];?>.jpg">
+		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
+			<img style="margin-left: -700px; margin-bottom: -300px;" src="<?php echo $data["Photos"];?>">
 			<h1><?php echo $data["Titre"];?></h1>
-			<h2><?php echo $data["Prix"];?> EUR</h2>
+			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
 			<!-- <h5><?php echo $description_finale;?></h5> -->
 			<a href="panier.php"><h3>Ajouter au panier</h3></a>
 			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
-			<a href="liste_livre_fiche.php"><h4>Retour</h4></a>
+			<a href="liste_livre_fiche.php"><h4 style="margin-left: 40px; color:#000000;" >Retour</h4></a>
 		</div><br>
 		<?php
 	}
-	}
 	else
 	{	
-		?><div class="texte-2"><h1>Bienvenue dans la catégorie Vetements</h1></div><?php
+		?><div style="margin-left: 40px; margin-top: 40px; " ><h1 > Vêtements : </h1></div><?php
 		$sql = "SELECT * from items WHERE Categorie='Vetements'";
 		$result = mysqli_query($db_handle, $sql);
 		while($data = mysqli_fetch_assoc($result))
@@ -91,14 +87,9 @@ if($db_found)
 			?>
 			<br><br>
 			
-			<div class="texte-2">
-				<a href="?show=<?php echo $data["Titre"];?>"><h2><?php echo $data["Titre"];?></h2></a>
-			</div>
-			
-			<div class="texte-2">
-				<h3><?php echo $data["Prix"];?> EUR</h3>
-			</div>
-			<div class="texte-2">
+			<div style="margin-left:100px;">
+				<a href="?show=<?php echo $data["Titre"];?>"><h2 style="color:#AB0606;"><?php echo $data["Titre"];?></h2></a>
+				<h3 style="color:#AB0606;"><?php echo $data["Prix"];?> € </h3>	
 				<a href="Panier.php"><h4>Ajouter au panier</h4></a>
 			</div>
 			<br/><br/><br/>	
@@ -112,3 +103,25 @@ if($db_found)
 	}
 	
 	?>
+	
+	<footer class="page-footer3">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-12">
+
+</div>
+
+<h4 class="contact">Contact<br> <br>
+37, quai de Grenelle, 75015 Paris, France <br>
+info@webDynamique.ece.fr <br>
++33 01 02 03 04 05 <br>
++33 01 03 02 05 04
+</h4>
+
+</div>
+</div>
+<div class="copyright">&copy; 2019 Copyright | Droit
+d'auteur: webDynamique.ece.fr </div>
+</footer>
+</body>
+</html>

@@ -42,7 +42,7 @@ href="login.php">Mon Compte</a></li>
 </div>
 </nav>
 
-<div> Voici les Articles que vous avez achetés :
+<div> Nos Meilleures Ventes : 
 </div>
 
 <footer class="page-footer3">
