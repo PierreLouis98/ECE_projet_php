@@ -67,15 +67,15 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Ajout Items vetements </legend>
+        <legend> Ajout Items Livre </legend>
 		<form action="login1.php" method="post" >
 		<table>
             <p>
-                <label for="catnom"> Type  </label>
+                <label for="catnom"> Nom  </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Marque </label>                   
+                <label for="catdesct"> Auteur </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
             </p>
             <p>
@@ -83,41 +83,24 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
                 <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
             </p>
 			<p>
-               <label> Homme
-<input type="radio" name="Homme" value="Homme">
-</label>
-<label> Femme
-<input type="radio" name="Femme" value="Femme">
-</label>
+			    <label for="catdesct"> Date </label>  
+                <input type="date" name="d" value="<?php echo $today?>">
             </p>
 			
-			
-			
-			<p> 
-                <select name="taille" id="catdesct" >
-<option>XS</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>XXL</option>
-
-</select>
-
+			<p>
+                <label for="catdesct"> Prix </label>                   
+                <input type="number" name="prix" value="0€" />
             </p>
-			<p> 
 			
      
-     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br /> <br/> 
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br />
-	 
-	 <label for="mon_fichier"> Autre Photo de l'Article:</label><br />
+     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br>
 	 
-            </p>
-            <p>
+	 
+    
+            <p> 
+            	<br>
                 <input type="submit" name="button1" value="Soumettre"/>
             </p>
 		</table>
@@ -127,13 +110,12 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 
 </div>
-
-
-
 </div>
-<footer class="page-footer">
+
+<footer class="page-footer3">
 <div class="container">
 <div class="row">
+<div class="col-lg-8 col-md-8 col-sm-12">
 
 
 <h4 class="contact2">Contact<br> <br>
@@ -143,6 +125,7 @@ penrose@edu.ece.fr <br>
 06 13 99 67 66
 </h4>
 
+</div>
 </div>
 </div>
 <div class="copyright">&copy; 2019 Copyright | Droit

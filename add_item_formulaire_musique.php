@@ -67,16 +67,21 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Ajout items musique ou livre </legend>
+        <legend> Ajout Items Musique</legend>
 		<form action="login1.php" method="post" >
 		<table>
             <p>
                 <label for="catnom"> Nom  </label>
                 <input class="text" type="text" name="catnom" id="catnom" value=""/>
             </p>
+            
             <p>
-                <label for="catdesct"> Auteur </label>                   
+                <label for="catdesct"> Artiste </label>                   
                 <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+            </p>
+            <p>
+                <label for="catdesct"> Description </label>                   
+                <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
             </p>
 			<p>
 			    <label for="catdesct"> Date </label>  
@@ -89,9 +94,9 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			
      
-     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br />
+     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br>
 	 
 	 
     

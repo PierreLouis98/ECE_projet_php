@@ -67,7 +67,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 <div id="conteneur">
     <fieldset>
-        <legend> Ajout items Sports et Loisirs </legend>
+        <legend> Ajout Items Sports et Loisirs </legend>
 		<form action="login1.php" method="post" >
 		<table>
             <p>
@@ -80,7 +80,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			<p>
                 <label for="catdesct"> Description </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+                <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
             </p>
 			
 			<p>
@@ -89,7 +89,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			
      
-     <label for="mon_fichier"> Votre photo de l'article ( max. 1 Mo) :</label><br /> <br />
+     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br /> <br />
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br /> <br />
 	 

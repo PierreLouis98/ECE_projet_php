@@ -45,38 +45,33 @@ href="login.php">Mon Compte</a></li>
 <div class="container features">
 
 
-<div>
-
-<div class="row">
 
 <div class="col-xs-2 col-sm-50">	
 <h3 class="feature-title"> Ajouter Livre</h3>
-<a href="add_item_formulaire_musique_livre.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
+<a href="add_item_formulaire_livre.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
 </div>
 
 <div class="col-xs-2 col-sm-50">
 <h3 class="feature-title"> Ajouter Musique </h3>
-<a href="add_item_formulaire_musique_livre.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
-</div>
+<a href="add_item_formulaire_musique.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
 </div>
 
-
-<div class="row">
 
 <div class="col-xs-6 col-sm-50">
 <h3 class="feature-title"> Ajouter Vetements</h3>
 <a href="add_item_formulaire_vetement.php"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
 </div>
 
+
 <div class="col-xs-6 col-sm-50">
 <h3 class="feature-title"> Ajouter Sports </h3>
 <a href="add_item_formulaire_sport.php"><img src="addsport.jpg" height='250' width='400'> </a>
 </div>
 
+
 </div>
-</div>
-</div>
-</div>
+
+
 
 <footer class="page-footer">
 <div class="container">
