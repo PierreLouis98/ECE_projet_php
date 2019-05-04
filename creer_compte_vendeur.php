@@ -16,27 +16,30 @@ $(document).ready(function(){
 $('.header').height($(window).height());
 });
 </script>
-	<?php // CODE PHP CORRESPONSDANT
+	<?php // Code qui marche pour ajouter un vendeur
 		$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
 		$mail = isset($_POST["mail"])? $_POST["mail"] : "";
 		$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 		$profil = isset($_POST["profil"])? $_POST["profil"] : "";
-		$profil2 = basename($profil);
+		$pro = basename($profil);
 		$fond = isset($_POST["fond"])? $_POST["fond"] : "";
-		$fond2 = basename($fond);
+		$fo = basename($fond);
+		$statut = "vendeur";
+		$connected = 0;
+		
 		$database = "ece_amazon";
 		$db_handle = mysqli_connect('localhost', 'root', '');
 		$db_found = mysqli_select_db($db_handle, $database);
-		$bouton = isset($_POST["button1"])? $_POST["button1"] : "";
-		if ($bouton){
 		if ($db_found) {
-				$sql = "INSERT INTO vendeur(nom, mail, pseudo, fond, photo) VALUES('$nom', '$mail', '$pseudo', '$fond2', '$profil2')";
+			if (isset($_POST["button1"])){
+				$sql = "INSERT INTO vendeur(nom, mail, pseudo, fond, photo) VALUES('$nom', '$mail', '$pseudo', '$fo', '$pro')";
 				$result = mysqli_query($db_handle, $sql);
-				$sql = "INSERT INTO logins(identifiant, password, statut) VALUES('$mail', '$pseudo', 'vendeur')";
+				$sql = "INSERT INTO logins(statut, identifiant, password, connected) VALUES('$statut', '$mail', '$pseudo', '$connected')";
 				$result = mysqli_query($db_handle, $sql);
-			}		
+			}
+		}			
 		else {echo "Database not found";}
-		}
+		
 		mysqli_close($db_handle);
 	?>
 </head>

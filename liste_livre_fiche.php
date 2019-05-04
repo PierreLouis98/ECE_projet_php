@@ -45,7 +45,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <?php
 
 $database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', 'root');
+$db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
 
@@ -63,7 +63,7 @@ if($db_found)
 		?>
 		<br>
 		<div class="texte-2" style="text-align: center;">
-			<img src="imgs/<?php echo $data["Titre"];?>.jpg">
+			<img src="<?php echo $data["Photos"];?>">
 			<h1><?php echo $data["Titre"];?></h1>
 			<h2><?php echo $data["Prix"];?> EUR</h2>
 			<!-- <h5><?php echo $description_finale;?></h5> -->

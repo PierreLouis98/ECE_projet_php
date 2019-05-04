@@ -16,6 +16,42 @@ $(document).ready(function(){
 $('.header').height($(window).height());
 });
 </script>
+
+<?php // AJOUTER UN ITEM DANS ITEM ET MUSICSLIVRES   
+
+		// musicslivres
+		$titre = isset($_POST["titre"])? $_POST["titre"] : "";
+		$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
+		$date = isset($_POST["date"])? $_POST["date"] : "";
+		// item
+		$video = isset($_POST["video"])? $_POST["video"] : "";
+		$photo = isset($_POST["photo"])? $_POST["photo"] : "";
+		$pho = basename($photo);
+		$desc = isset($_POST["description"])? $_POST["description"] : "";
+		$categorie = "Livres";
+		$prix = isset($_POST["prix"])? $_POST["prix"] : "";
+		
+		$database = "ece_amazon";
+		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_found = mysqli_select_db($db_handle, $database);
+		if ($db_found) {
+			if (isset($_POST["button1"])){
+				$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix')";
+				$result = mysqli_query($db_handle, $sql);
+				$sql = "SELECT * FROM items WHERE Titre='$titre'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				$id = $data['ID'];
+				$sql = "INSERT INTO musicslivres(id, auteur, titre, sortie) VALUES('$id', '$auteur', '$titre', '$date')";
+				$result = mysqli_query($db_handle, $sql);
+				
+			} 
+			else {echo "WHAT THE FUCK";}
+		}		
+		else {echo "Database not found";}
+		
+		mysqli_close($db_handle);	
+?>
 </head>
 <body>
 
@@ -68,36 +104,32 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 <div id="conteneur">
     <fieldset>
         <legend> Ajout Items Livre </legend>
-		<form action="login1.php" method="post" >
+		<form method="post" >
 		<table>
             <p>
-                <label for="catnom"> Nom  </label>
-                <input class="text" type="text" name="catnom" id="catnom" value=""/>
+                <label for="titre"> Nom  </label>
+                <input class="text" type="text" name="titre" id="titre" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Auteur </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
+                <label for="auteur"> Auteur </label>                   
+                <input class="text" type="text" name="auteur" id="auteur" value=""/>
             </p>
             <p>
-                <label for="catdesct"> Description </label>                   
-                <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
+                <label for="description"> Description </label>                   
+                <TEXTAREA class="text" name="description" rows=4 cols=40></TEXTAREA>
             </p>
 			<p>
-			    <label for="catdesct"> Date </label>  
-                <input type="date" name="d" value="<?php echo $today?>">
+			    <label for="date"> Date </label>  
+                <input type="text" name="date" value="">
             </p>
 			
 			<p>
-                <label for="catdesct"> Prix </label>                   
-                <input type="number" name="prix" value="0€" />
+                <label for="prix"> Prix </label>                   
+                <input type="text" name="prix" value="0€" />
             </p>
-			
-     
-     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br>
-	 
-	 
+			<label for="photo"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
+			 <input type="file" name="photo">
+			 	 
     
             <p> 
             	<br>

@@ -42,7 +42,24 @@ href="login.php">Mon Compte</a></li>
 </div>
 </nav>
 
-<div> LISTE VENDEUR
+<div>  LISTE VENDEUR <br>
+	<?php // CODE PHP CORRESPONSDANT
+		$database = "ece_amazon";
+		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_found = mysqli_select_db($db_handle, $database);
+		
+		if ($db_found) 
+		{
+				$sql = "SELECT * FROM vendeur";
+				$result = mysqli_query($db_handle, $sql);
+				while ($data = mysqli_fetch_assoc($result)) { 
+				echo " <br>  - <input type=submit value=" .$data['nom']. " onclick=runMyFunction('".$data['nom']."')><br>";
+				echo "<br>";
+				}
+		}		
+		else {echo "Database not found";}
+		mysqli_close($db_handle);
+	?>
 </div>
 
 <footer class="page-footer3">

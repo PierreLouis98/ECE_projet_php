@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <html>
 <head>
 <title>TP sur Bootstrap</title>

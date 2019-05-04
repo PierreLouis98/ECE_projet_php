@@ -85,7 +85,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			<p>
 			    <label for="catdesct"> Date </label>  
-                <input type="date" name="d" value="<?php echo $today?>">
+                <input type="date" name="d" value="">
             </p>
 			
 			<p>
