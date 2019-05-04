@@ -17,6 +17,41 @@ $('.header').height($(window).height());
 });
 </script>
 </head>
+	<?php // AJOUTER UN ITEM DANS ITEM ET vetements  
+
+			// musicslivres
+			$titre = isset($_POST["titre"])? $_POST["titre"] : "";
+			$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
+			$date = isset($_POST["date"])? $_POST["date"] : "";
+			// item
+			$video = isset($_POST["video"])? $_POST["video"] : "";
+			$photo = isset($_POST["photo"])? $_POST["photo"] : "";
+			$pho = basename($photo);
+			$desc = isset($_POST["description"])? $_POST["description"] : "";
+			$categorie = "Livres";
+			$prix = isset($_POST["prix"])? $_POST["prix"] : "";
+			
+			$database = "ece_amazon";
+			$db_handle = mysqli_connect('localhost', 'root', '');
+			$db_found = mysqli_select_db($db_handle, $database);
+			if ($db_found) {
+				if (isset($_POST["button1"])){
+					$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix')";
+					$result = mysqli_query($db_handle, $sql);
+					$sql = "SELECT * FROM items WHERE Titre='$titre'";
+					$result = mysqli_query($db_handle, $sql);
+					$data = mysqli_fetch_assoc($result);
+					$id = $data['ID'];
+					$sql = "INSERT INTO musicslivres(id, auteur, titre, sortie) VALUES('$id', '$auteur', '$titre', '$date')";
+					$result = mysqli_query($db_handle, $sql);
+					
+				} 
+				else {echo "WHAT THE FUCK";}
+			}		
+			else {echo "Database not found";}
+			
+			mysqli_close($db_handle);	
+	?>
 <body>
 
 <nav class="navbar navbar-expand-md">

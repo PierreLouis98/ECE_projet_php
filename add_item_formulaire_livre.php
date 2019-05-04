@@ -78,29 +78,7 @@ href="login.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
-
-
-
-
 <div class="row">
-
-
-
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
-
-
 <div id="conteneur">
     <fieldset>
         <legend> Ajout Items Livre </legend>
@@ -116,7 +94,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
             <p>
                 <label for="description"> Description </label>                   
-                <TEXTAREA class="text" name="description" rows=4 cols=40></TEXTAREA>
+                <input class="text" name="description"/>
             </p>
 			<p>
 			    <label for="date"> Date </label>  
@@ -129,8 +107,6 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
             </p>
 			<label for="photo"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
 			 <input type="file" name="photo">
-			 	 
-    
             <p> 
             	<br>
                 <input type="submit" name="button1" value="Soumettre"/>
@@ -139,8 +115,6 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 		</form>
     </fieldset>
 </div>
-
-
 </div>
 </div>
 

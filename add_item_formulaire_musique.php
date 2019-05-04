@@ -17,6 +17,41 @@ $('.header').height($(window).height());
 });
 </script>
 </head>
+	<?php // AJOUTER UN ITEM DANS ITEM ET MUSICSLIVRES   
+
+			// musicslivres
+			$titre = isset($_POST["titre"])? $_POST["titre"] : "";
+			$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
+			$date = isset($_POST["date"])? $_POST["date"] : "";
+			// item
+			$video = isset($_POST["video"])? $_POST["video"] : "";
+			$photo = isset($_POST["photo"])? $_POST["photo"] : "";
+			$pho = basename($photo);
+			$desc = isset($_POST["description"])? $_POST["description"] : "";
+			$categorie = "Musiques";
+			$prix = isset($_POST["prix"])? $_POST["prix"] : "";
+			
+			$database = "ece_amazon";
+			$db_handle = mysqli_connect('localhost', 'root', '');
+			$db_found = mysqli_select_db($db_handle, $database);
+			if ($db_found) {
+				if (isset($_POST["button1"])){
+					$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix')";
+					$result = mysqli_query($db_handle, $sql);
+					$sql = "SELECT * FROM items WHERE Titre='$titre'";
+					$result = mysqli_query($db_handle, $sql);
+					$data = mysqli_fetch_assoc($result);
+					$id = $data['ID'];
+					$sql = "INSERT INTO musicslivres(id, auteur, titre, sortie) VALUES('$id', '$auteur', '$titre', '$date')";
+					$result = mysqli_query($db_handle, $sql);
+					
+				} 
+				else {echo "WHAT THE FUCK";}
+			}		
+			else {echo "Database not found";}
+			
+			mysqli_close($db_handle);	
+	?>
 <body>
 
 <nav class="navbar navbar-expand-md">
@@ -42,75 +77,44 @@ href="login.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
-
-
-
-
-<div class="row">
-
-
-
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
-
-
-<div id="conteneur">
-    <fieldset>
-        <legend> Ajout Items Musique</legend>
-		<form action="login1.php" method="post" >
-		<table>
-            <p>
-                <label for="catnom"> Nom  </label>
-                <input class="text" type="text" name="catnom" id="catnom" value=""/>
-            </p>
-            
-            <p>
-                <label for="catdesct"> Artiste </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
-            </p>
-            <p>
-                <label for="catdesct"> Description </label>                   
-                <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
-            </p>
-			<p>
-			    <label for="catdesct"> Date </label>  
-                <input type="date" name="d" value="">
-            </p>
-			
-			<p>
-                <label for="catdesct"> Prix </label>                   
-                <input type="number" name="prix" value="0€" />
-            </p>
-			
-     
-     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br>
-	 
-	 
-    
-            <p> 
-            	<br>
-                <input type="submit" name="button1" value="Soumettre"/>
-            </p>
-		</table>
-		</form>
-    </fieldset>
-</div>
-
-
-</div>
+	<div class="row">
+		<div id="conteneur">
+			<fieldset>
+				<legend> Ajout Items Musique </legend>
+				<form method="post" >
+					<table>
+						<p>
+							<label for="titre"> Titre  </label>
+							<input class="text" type="text" name="titre" id="titre" value=""/>
+						</p>
+						<p>
+							<label for="auteur"> Artiste </label>                   
+							<input class="text" type="text" name="auteur" id="auteur" value=""/>
+						</p>
+						<p>
+							<label for="description"> Description </label>                   
+							<input class="text" name="description"/>
+						</p>
+						<p>
+							<label for="date"> Date </label>  
+							<input type="text" name="date" value="">
+						</p>
+						
+						<p>
+							<label for="prix"> Prix </label>                   
+							<input type="text" name="prix" value="0€" />
+						</p>
+						<label for="photo"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
+						 <input type="file" name="photo">
+						<p> 
+							<br>
+							<input type="submit" name="button1" value="Soumettre"/>
+						</p>
+					</table>
+				</form>
+			</fieldset>
+		</div>
+	</div>
 </div>
 
 <footer class="page-footer3">
