@@ -110,7 +110,7 @@ href="login.php">Mon Compte</a></li>
 <div class="row">
 
 
-<h4 class="contact">Contact<br> <br>
+<h4 class="contact2">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
 penrose@edu.ece.fr <br>
 06 22 61 69 40 <br>
