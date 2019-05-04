@@ -31,18 +31,59 @@ $('.header').height($(window).height());
 href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_vendeur.php">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_admi.php">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_acheteur.php">Mon Compte</a></li>
+href="login.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 <a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
 </div>
 </nav>
 
-<form action="Liste_item1.php" method="post">
+
+<div class="container features">
+
+
+<div>
+
+<div class="row">
+
+<div class="col-xs-2 col-sm-50">	
+<h3 class="feature-title"> Livres </h3>
+<a href="liste_livre_fiche.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
+</div>
+
+<div class="col-xs-2 col-sm-50">
+<h3 class="feature-title"> Musique </h3>
+<a href="liste_musique_fiche.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-xs-6 col-sm-50">
+<h3 class="feature-title"> Vetements </h3>
+<a href="liste_vetements_fiche.php"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
+</div>
+
+<div class="col-xs-6 col-sm-50">
+<h3 class="feature-title"> Sports </h3>
+<a href="liste_sport_fiche.php"><img src="addsport.jpg" height='250' width='400'> </a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!--
+
+<form action="liste_livre_fiche.php" method="post">
 <div class="container features2">
 
 
@@ -76,7 +117,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </div>
 </div>
 </form>
-
+-->
 <footer class="page-footer">
 <div class="container">
 <div class="row">
@@ -86,9 +127,9 @@ href="verif_acheteur.php">Mon Compte</a></li>
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
-penrose@edu.ece.fr <br>
-06 22 61 69 40 <br>
-06 13 99 67 66
+info@webDynamique.ece.fr <br>
++33 01 02 03 04 05 <br>
++33 01 03 02 05 04
 </h4>
 
 </div>
