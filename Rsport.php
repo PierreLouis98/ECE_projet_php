@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -35,50 +36,16 @@ href="login.php">Vendre</a></li>
 href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
 href="login.php">Mon Compte</a></li>
-<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' ></a>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 <a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
 </div>
 </nav>
 
-<div class="container features">
-
-
-<div>
-
-<div class="row">
-
-<div class="col-xs-2 col-sm-50">	
-<h3 class="feature-title"> Supprimer Livre</h3>
-<a href="Rlivre.php"> <img src="addlivre.jpg" height='250' width='400' ></a> <br><br><br>
+<div> LISTE SPORTS
 </div>
 
-<div class="col-xs-2 col-sm-50">
-<h3 class="feature-title"> Supprimer Musique </h3>
-<a href="Rmusique.php"> <img src="addmusique.jpg" height='250' width='400'> </a> <br><br><br>
-</div>
-</div>
-
-
-<div class="row">
-
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Supprimer Vetements</h3>
-<a href="Rvetement.php"><img src="addvet.png" height='250' width='400' > </a> <br><br><br>
-</div>
-
-<div class="col-xs-6 col-sm-50">
-<h3 class="feature-title"> Supprimer Sports </h3>
-<a href="Rsport.php"><img src="addsport.jpg" height='250' width='400'> </a>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-
-<footer class="page-footer">
+<footer class="page-footer3">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">
