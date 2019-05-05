@@ -95,12 +95,12 @@ href="login.php">Mon Compte</a></li>
 			 <!--<label for="profil"> Photo de profil ( max. 1 Mo) :</label><br />
 			 <input type="hidden" name="profil" />
 			 <input type="file" name="profil" id="profil" /><br /> <br />-->
-			 <input type="file" name="profil">
+			<a> <input type="file" name="fond"> Photo de Profil </a>
 			 
 			 <!--<label for="fond"> Image de fond préférée :</label><br />
 			 <input type="hidden" name="fond" />
 			 <input type="file" name="fond" id="fond" /><br /> <br />-->
-			 <input type="file" name="fond">
+			<a> <input type="file" name="profil"> Photo de fond </a>
 			
 					<p>
 						<input type="submit" name="button1" value="Soumettre"/>
