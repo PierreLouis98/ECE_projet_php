@@ -10,6 +10,7 @@ function creationPanier(){
       $_SESSION['panier']['libelleProduit'] = array();
       $_SESSION['panier']['qteProduit'] = array();
       $_SESSION['panier']['prixProduit'] = array();
+	  $_SESSION['panier']['photos'] = array();
       $_SESSION['panier']['verrou'] = false;
    }
    return true;
@@ -23,7 +24,7 @@ function creationPanier(){
  * @param float $prixProduit
  * @return void
  */
-function ajouterArticle($libelleProduit,$qteProduit,$prixProduit){
+function ajouterArticle($libelleProduit,$qteProduit,$prixProduit, $phh){
 
    //Si le panier existe
    if (creationPanier() && !isVerrouille())
@@ -41,6 +42,7 @@ function ajouterArticle($libelleProduit,$qteProduit,$prixProduit){
          array_push( $_SESSION['panier']['libelleProduit'],$libelleProduit);
          array_push( $_SESSION['panier']['qteProduit'],$qteProduit);
          array_push( $_SESSION['panier']['prixProduit'],$prixProduit);
+		 array_push( $_SESSION['panier']['photos'],$phh);
       }
    }
    else
@@ -100,6 +102,7 @@ function supprimerArticle($libelleProduit){
             array_push( $tmp['libelleProduit'],$_SESSION['panier']['libelleProduit'][$i]);
             array_push( $tmp['qteProduit'],$_SESSION['panier']['qteProduit'][$i]);
             array_push( $tmp['prixProduit'],$_SESSION['panier']['prixProduit'][$i]);
+			array_push( $tmp['photos'],$_SESSION['panier']['photos'][$i]);
          }
 
       }

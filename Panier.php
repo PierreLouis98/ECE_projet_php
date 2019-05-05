@@ -15,8 +15,7 @@ if($action !== null)
    $l = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;
    $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
    $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
-   $ph= (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
-
+   $ph= (isset($_POST['ph'])? $_POST['ph']:  (isset($_GET['ph'])? $_GET['ph']:null )) ;
    //Suppression des espaces verticaux
    $l = preg_replace('#\v#', '',$l);
    //On verifie que $p soit un float
@@ -33,7 +32,7 @@ if($action !== null)
    }
    else
    $q = intval($q);
-    
+   
 	
 	//$q=1;
 	//$l="ww";
@@ -43,7 +42,7 @@ if($action !== null)
 if (!$erreur){
    switch($action){
       Case "ajout":
-         ajouterArticle($l,$q,$p);
+         ajouterArticle($l,$q,$p, $ph);
          break;
 
       Case "suppression":
@@ -97,6 +96,15 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
 	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
 	         echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
+			 
+			 
+			 
+			 ?>
+			 <img src=" <?php echo $_SESSION['panier']['photos'][$i]; ?> " >
+			 <?php
+			 
+			 
+			 //echo $_SESSION['panier']['Photos'][$i];
 	         echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">XX</a></td>";
 	         echo "</tr>";
 	      }
@@ -108,6 +116,13 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 
 	      echo "<tr><td colspan=\"4\">";
 	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+		 ?>
+		 
+		 <a href="Valider_commande.php"><h4> Passer la commande </h4></a>
+		 
+		 <?php
+		 
+		 
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
 
 	      echo "</td></tr>";

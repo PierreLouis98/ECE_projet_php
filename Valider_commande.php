@@ -58,25 +58,11 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 
 
 <form>
-        <h1>Créer Compte Acheteur</h1>
+        <h1> Valider la transaction: </h1>
         <p>Les champs obligatoires sont suivis par <strong><abbr title="required">*</abbr></strong>.</p>
         <section>
             <h2>Informations de contact</h2>
-            <fieldset>
-              <ul>
-                 
-                    <label for="title_1">
-                      <input type="radio" id="title_1" name="title" value="M." >
-                      Monsieur
-                    </label>
-                 
-                    <label for="title_2">
-                      <input type="radio" id="title_2" name="title" value="Mme.">
-                      Madame
-                    </label>
-                  
-              </ul>
-            </fieldset>
+            
             <p>
               <label for="name">
                 <span>Nom :</span>
@@ -84,16 +70,40 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
               </label>
               <input type="text" id="name" name="username">
             </p>
+            
             <p>
               <label for="name">
-                <span>Prénom :</span>
+                <span>Adresse :</span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+			<p>
+              <label for="name">
+                <span>Ville :</span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+			<p>
+              <label for="name">
+                <span>Code Postal :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
               <input type="text" id="name" name="username">
             </p>
             <p>
+			<p>
               <label for="name">
-                <span>Adresse :</span>
+                <span>Pays :</span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+            <p>
+			<p>
+              <label for="name">
+                <span>Téléphone :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
               <input type="text" id="name" name="username">
@@ -105,13 +115,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
               </label>
               <input type="email" id="mail" name="usermail">
             </p>
-            <p>
-              <label for="password">
-                <span>Mot de passe :</span>
-                <strong><abbr title="required">*</abbr></strong>
-              </label>
-              <input type="password" id="pwd" name="password">
-            </p>
+           
         </section>
         <section>
             <h2>Informations de paiement</h2>
@@ -159,7 +163,7 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
 			
         </section>
         <section>
-            <p> <button type="submit">Créer Compte</button> </p>
+            <p> <button type="submit"> Valider la commande</button> </p>
         </section>
     </form>
 
