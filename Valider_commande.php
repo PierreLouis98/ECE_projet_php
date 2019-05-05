@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <title>TP sur Bootstrap</title>
@@ -16,6 +15,67 @@ $(document).ready(function(){
 $('.header').height($(window).height());
 });
 </script>
+<?php // CODE PHP CORRESPONSDANT
+		session_start();
+		$cardtype = isset($_POST["cardtype"])? $_POST["cardtype"] : "";
+		$cardsecu = isset($_POST["cardsecu"])? $_POST["cardsecu"] : "";
+		$cardexp = isset($_POST["cardexp"])? $_POST["cardexp"] : "";
+		$cardnumber = isset($_POST["cardnumber"])? $_POST["cardnumber"] : "";
+		$cardname = isset($_POST["cardname"])? $_POST["cardname"] : "";
+		$nom = isset($_POST["nom"])? $_POST["nom"] : "";
+		
+		$database = "ece_amazon";
+		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_found = mysqli_select_db($db_handle, $database);
+		
+		if ($db_found) 
+		{	
+			if (isset($_POST["button1"]))
+			{
+				$sql = "SELECT * FROM clients WHERE nom='$nom'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				if (($data['cardtype']==$cardtype) && ($data['cardnumber']==$cardnumber) && ($data['cardname']==$cardname) && ($data['cardexp']==$cardexp) && ($data['cardsecu']==$cardsecu))
+				{	
+					$nbArticles=count($_SESSION['panier']['libelleProduit']);
+					if ($nbArticles <= 0){ 
+					alert("Votre panier est vide, vous ne pouvez pas passez de commandes");
+					header ('location : Panier.php');
+					
+
+					}
+				    else
+					   {
+						   for ($i=0 ;$i < $nbArticles ; $i++)
+						  {
+							//$sql = "SELECT * FROM items WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
+							//$result = mysqli_query($db_handle, $sql);
+							//$data = mysqli_fetch_assoc($result);
+							//$cate = $data['Categorie'];
+						    $sql = "DELETE FROM items WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
+						    $result = mysqli_query($db_handle, $sql);
+							
+							
+							
+							
+							
+						    //$sql = "DELETE FROM ". ." WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
+						    //$result = mysqli_query($db_handle, $sql);
+						  }
+						  
+						  session_unset();
+						  session_destroy();
+						  header('location: merci.php');
+						  
+					   }
+				}
+				else {	echo "Données bancaires incorrectes";	}
+			}
+			else {echo "non cliqué";}
+		}
+		else {echo "Database not found";}
+		mysqli_close($db_handle);
+	?>
 </head>
 <body>
 
@@ -41,36 +101,20 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </div>
 </nav>
 
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
 <div class="container features">
-
-
-<form>
+<form method="post">
         <h1> Valider la transaction: </h1>
         <p>Les champs obligatoires sont suivis par <strong><abbr title="required">*</abbr></strong>.</p>
         <section>
             <h2>Informations de contact</h2>
             
             <p>
-              <label for="name">
+              <label for="nom">
                 <span>Nom :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
-              <input type="text" id="name" name="username">
+              <input type="text" id="nom" name="nom">
             </p>
-            
             <p>
               <label for="name">
                 <span>Adresse :</span>
@@ -120,21 +164,21 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
         <section>
             <h2>Informations de paiement</h2>
             <p>
-              <label for="card">
+              <label for="cardtype">
                 <span>Type de carte :</span>
               </label>
-              <select id="card" name="usercard">
+              <select id="card" name="cardtype">
                 <option value="visa">Visa</option>
                 <option value="mc">Mastercard</option>
                 <option value="amex">American Express</option>
               </select>
             </p>
             <p>
-              <label for="number">
+              <label for="cardnumber">
                 <span>Numéro :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
-                <input type="text" id="number" name="cardnumber">
+                <input type="text" id="cardnumber" name="cardnumber">
             </p>
             <p>
               <label for="date">
@@ -142,31 +186,28 @@ name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, 
                 <strong><abbr title="required">*</abbr></strong>
                 <em>format mm/aa</em>
               </label>
-              <input type="text" id="date" name="expiration">
+              <input type="text" id="date" name="cardexp">
             </p>
 			<p>
               <label for="number">
                 <span>Code de sécurité :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
-                <input type="text" id="number" name="cardnumber">
+                <input type="text" id="number" name="cardsecu">
             </p>
 			<p>
               <label for="name">
                 <span>Nom du porteur de la carte :</span>
                 <strong><abbr title="required">*</abbr></strong>
               </label>
-              <input type="text" id="name" name="username">
+              <input type="text" id="name" name="cardname">
             </p>
-			
-		
-			
         </section>
-        <section>
-            <p> <button type="submit"> Valider la commande</button> </p>
-        </section>
+        <p> 
+		<br>
+		<input type="submit" name="button1" value="Valider la commande"/>
+		</p>
     </form>
-
 </div>
 
 
