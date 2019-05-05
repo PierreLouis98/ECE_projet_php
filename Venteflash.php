@@ -63,8 +63,24 @@ href="verif_acheteur.php">Mon Compte</a></li>
 			$sql = "SELECT * FROM items WHERE vendu='$max1' AND Categorie='Vetements'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			echo "Meilleur vente: <br>";
-			echo "Vetement: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			//echo "Meilleur vente: <br>";
+			//echo "Vetement: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			?>
+			<br>
+		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
+			<img style="margin-left: -700px; margin-bottom: 30px;" src="<?php echo $data["Photos"];?>">
+			<h1><?php echo $data["Titre"];?></h1>
+			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
+			<!-- <h5><?php echo $description_finale;?></h5> -->
+			
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
+'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
+			
+		</div><br>
+			
+			<?php
+			
 	// livres
 			$sql = "SELECT * FROM items WHERE Categorie='Livres'";
 			$result = mysqli_query($db_handle, $sql);
@@ -76,8 +92,29 @@ href="verif_acheteur.php">Mon Compte</a></li>
 			$sql = "SELECT * FROM items WHERE vendu='$max2' AND Categorie='Livres'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			echo "Meilleur vente: <br>";
-			echo "Livre: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			//echo "Meilleur vente: <br>";
+			//echo "Livre: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			
+			?>
+			<p>
+			<br>
+		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
+			<img style="margin-left: -700px; margin-bottom: 30px;" src="<?php echo $data["Photos"];?>">
+			<h1><?php echo $data["Titre"];?></h1>
+			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
+			<!-- <h5><?php echo $description_finale;?></h5> -->
+			
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
+'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
+			
+		</div><br>
+		</p>
+			
+			<?php
+			
+			
+			
 	// Musiques
 			$sql = "SELECT * FROM items WHERE Categorie='Musiques'";
 			$result = mysqli_query($db_handle, $sql);
@@ -89,8 +126,30 @@ href="verif_acheteur.php">Mon Compte</a></li>
 			$sql = "SELECT * FROM items WHERE vendu='$max3' AND Categorie='Musiques'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			echo "Meilleur vente: <br>";
-			echo "Musique: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			//echo "Meilleur vente: <br>";
+			//echo "Musique: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			
+			?>
+			<p>
+			<br>
+		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
+			<img style="margin-left: -700px; margin-bottom: 30px;" src="<?php echo $data["Photos"];?>">
+			<h1><?php echo $data["Titre"];?></h1>
+			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
+			<!-- <h5><?php echo $description_finale;?></h5> -->
+			
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
+'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
+			
+		</div><br>
+		
+		</p>
+			
+			<?php
+			
+			
+			
 	// Sports
 			$sql = "SELECT * FROM items WHERE Categorie='Sports'";
 			$result = mysqli_query($db_handle, $sql);
@@ -102,8 +161,29 @@ href="verif_acheteur.php">Mon Compte</a></li>
 			$sql = "SELECT * FROM items WHERE vendu='$max4' AND Categorie='Sports'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			echo "Meilleur vente: <br>";
-			echo "Sport: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			//echo "Meilleur vente: <br>";
+			//echo "Sport: ".$data['Titre']. "<br>Qui a été vendu: ".$data['vendu']." fois<br>";
+			
+			
+			?>
+			<p>
+			<br>
+		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
+			<img style="margin-left: -700px; margin-bottom: 30px;" src="<?php echo $data["Photos"];?>">
+			<h1><?php echo $data["Titre"];?></h1>
+			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
+			<!-- <h5><?php echo $description_finale;?></h5> -->
+			
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
+'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
+			<a href="liste_livre_fiche.php"><h4 style="margin-left: 40px; color:#000000;" >Retour</h4></a>
+		</div><br>
+		</p>
+			
+			<?php
+			
+			
 		}
 		else {echo "Database not found";}
 		mysqli_close($db_handle);

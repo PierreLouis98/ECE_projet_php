@@ -37,10 +37,13 @@ $('.header').height($(window).height());
 		if ($db_found) {
 			if (isset($_POST["button1"])){
 				$mail = $_SESSION['login'];
+				if ($mail != "JeanMich") {
 				$sql = "SELECT * FROM vendeur WHERE mail='$mail'";
 				$result = mysqli_query($db_handle, $sql);
 				$data = mysqli_fetch_assoc($result);
 				$id_vend = $data['id'];
+				}
+					else {$id_vend = 0;}
 				$vendu = 0;
 				$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix, vendu, id_vend) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix', '$vendu', '$id_vend')";
 				$result = mysqli_query($db_handle, $sql);
@@ -52,7 +55,7 @@ $('.header').height($(window).height());
 				$result = mysqli_query($db_handle, $sql);
 				
 			} 
-			else {echo "WHAT THE FUCK";}
+			
 		}		
 		else {echo "Database not found";}
 		

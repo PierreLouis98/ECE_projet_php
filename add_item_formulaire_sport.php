@@ -18,7 +18,7 @@ $('.header').height($(window).height());
 </script>
 </head>
 	<?php // AJOUTER UN ITEM DANS ITEM ET sport
-
+			session_start();
 			// musicslivres
 			$couleur = isset($_POST["titre"])? $_POST["titre"] : "";
 			$sport = isset($_POST["sport"])? $_POST["sport"] : "";
@@ -33,11 +33,20 @@ $('.header').height($(window).height());
 			$prix = isset($_POST["prix"])? $_POST["prix"] : "";
 			
 			$database = "ece_amazon";
-			$db_handle = mysqli_connect('localhost', 'root', 'root');
+			$db_handle = mysqli_connect('localhost', 'root', '');
 			$db_found = mysqli_select_db($db_handle, $database);
 			if ($db_found) {
 				if (isset($_POST["button1"])){
-					$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix')";
+					$mail = $_SESSION['login'];
+					if ($mail != "JeanMich") {
+					$sql = "SELECT * FROM vendeur WHERE mail='$mail'";
+					$result = mysqli_query($db_handle, $sql);
+					$data = mysqli_fetch_assoc($result);
+					$id_vend = $data['id'];
+					}
+					else {$id_vend = 0;}
+					$vendu = 0;
+					$sql = "INSERT INTO items(Titre, Photos, Description, Video, Categorie, Prix, vendu, id_vend) VALUES('$titre', '$pho', '$desc', '$video', '$categorie', '$prix', '$vendu', '$id_vend')";
 					$result = mysqli_query($db_handle, $sql);
 					$sql = "SELECT * FROM items WHERE Titre='$titre'";
 					$result = mysqli_query($db_handle, $sql);
@@ -47,7 +56,7 @@ $('.header').height($(window).height());
 					$result = mysqli_query($db_handle, $sql);
 					
 				} 
-				else {echo "WHAT THE FUCK";}
+				
 			}		
 			else {echo "Database not found";}
 			
