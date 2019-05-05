@@ -28,7 +28,7 @@ $('.header').height($(window).height());
 		$connected = 0;
 		
 		$database = "ece_amazon";
-		$db_handle = mysqli_connect('localhost', 'root', 'root');
+		$db_handle = mysqli_connect('localhost', 'root', '');
 		$db_found = mysqli_select_db($db_handle, $database);
 		if ($db_found) {
 			if (isset($_POST["button1"])){
@@ -56,11 +56,11 @@ $('.header').height($(window).height());
 href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_vendeur.php">Vendre</a></li>
+href="login.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_admi.php">Administrateur</a></li>
+href="login.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="verif_acheteur.php">Mon Compte</a></li>
+href="login.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70' > </a>
 <a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
@@ -68,44 +68,44 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
-<div class="row">
-<div id="conteneur">
-    <fieldset>
-        <legend> Compte vendeur </legend>
-		<form method="post">
-		<table>
-            <p>
-                <label for="pseudo"> Pseudo </label>
-                <input class="text" type="text" name="pseudo" id="pseudo" value=""/>
-            </p>
-            <p>
-                <label for="mail"> Adresse Mail </label>                   
-                <input class="text" type="text" name="mail" id="mail" value=""/>
-            </p>
-			<p>
-                <label for="nom"> Nom </label>                   
-                <input class="text" type="text" name="nom" id="nom" value=""/>
-            </p>
+	<div class="row">
+		<div id="conteneur">
+			<fieldset>
+				<legend> Compte vendeur </legend>
+				<form method="post">
+				<table>
+					<p>
+						<label for="pseudo"> Pseudo </label>
+						<input class="text" type="text" name="pseudo" id="pseudo" value=""/>
+					</p>
+					<p>
+						<label for="mail"> Adresse Mail </label>                   
+						<input class="text" type="text" name="mail" id="mail" value=""/>
+					</p>
+					<p>
+						<label for="nom"> Nom </label>                   
+						<input class="text" type="text" name="nom" id="nom" value=""/>
+					</p>
+					
+			 
+			 <!--<label for="profil"> Photo de profil ( max. 1 Mo) :</label><br />
+			 <input type="hidden" name="profil" />
+			 <input type="file" name="profil" id="profil" /><br /> <br />-->
+			 <input type="file" name="profil">
+			 
+			 <!--<label for="fond"> Image de fond préférée :</label><br />
+			 <input type="hidden" name="fond" />
+			 <input type="file" name="fond" id="fond" /><br /> <br />-->
+			 <input type="file" name="fond">
 			
-     
-     <!--<label for="profil"> Photo de profil ( max. 1 Mo) :</label><br />
-     <input type="hidden" name="profil" />
-     <input type="file" name="profil" id="profil" /><br /> <br />-->
-	 <input type="file" name="profil">
-	 
-     <!--<label for="fond"> Image de fond préférée :</label><br />
-     <input type="hidden" name="fond" />
-     <input type="file" name="fond" id="fond" /><br /> <br />-->
-	 <input type="file" name="fond">
-    
-            <p>
-                <input type="submit" name="button1" value="Soumettre"/>
-            </p>
-		</table>
-		</form>
-    </fieldset>
-</div>
-</div>
+					<p>
+						<input type="submit" name="button1" value="Soumettre"/>
+					</p>
+				</table>
+				</form>
+			</fieldset>
+		</div>
+	</div>
 </div>
 
 <footer class="page-footer">
