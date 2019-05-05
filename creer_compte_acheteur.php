@@ -47,10 +47,8 @@ $('.header').height($(window).height());
 				$result = mysqli_query($db_handle, $sql);
 				$data = mysqli_fetch_assoc($result);
 				$id = $data['id'];
-				echo $id;
 				$sql = "INSERT INTO logins(ID, statut, identifiant, password, connected) VALUES('$id', '$statut', '$pseudo', '$password', '$connected')";
 				$result = mysqli_query($db_handle, $sql);
-				echo "coool";
 			}
 		}		
 		else {echo "Database not found";}
