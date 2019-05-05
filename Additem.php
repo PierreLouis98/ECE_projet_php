@@ -41,7 +41,35 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </div>
 </nav>
 
+<?php
+session_start ();
+
+
+
+if($_SESSION['connected'] == 2){
+	?>
+	
+<body style="background: url('<?php echo $_SESSION['photoprofil'];?>');background-repeat: no-repeat;">
+</body>
+<?php
+}
+?>
 <div class="container features">
+
+<?php 
+
+if($_SESSION['connected'] == 2){
+	?>
+	
+<img style="margin-left: 0px; margin-bottom: 0px; height: 80px; width: 80px;" src="<?php echo $_SESSION['photofond'];?>">
+<h1><?php echo $_SESSION['login'];?></h1>
+
+<?php 
+}
+?>
+
+
+
 
 
 
