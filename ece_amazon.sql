@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 05 mai 2019 à 11:04
--- Version du serveur :  5.7.23
--- Version de PHP :  7.2.10
+-- Généré le :  Dim 05 mai 2019 à 13:20
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,37 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `ece_amazon`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `clients`
+--
+
+DROP TABLE IF EXISTS `clients`;
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int(50) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `sexe` varchar(255) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
+  `cardtype` varchar(255) NOT NULL,
+  `cardnumber` varchar(255) NOT NULL,
+  `cardexp` varchar(255) NOT NULL,
+  `cardsecu` varchar(255) NOT NULL,
+  `cardname` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `clients`
+--
+
+INSERT INTO `clients` (`id`, `nom`, `prenom`, `sexe`, `mail`, `adresse`, `cardtype`, `cardnumber`, `cardexp`, `cardsecu`, `cardname`) VALUES
+(8, 'Kirgener', 'Maxence', 'Homme', 'maxence@hotmail.fr', '33 rue des moulins', 'Mastercard', '5135 1800 0000 001', '01/20', '423', 'KIRGENER'),
+(9, 'de Planta', 'Victoire', 'Femme', 'victoire@hotmail.fr', 'rue de la pompe', 'visa', '123', '12/23', '123', 'victoire'),
+(10, 'Ngolo', 'Vilfrid', 'Homme', 'vilfrid@gmail.com', '18 rue de la Paix', 'amex', '4654798732111595', '02/25', '762', 'NGOLO');
 
 -- --------------------------------------------------------
 
@@ -64,13 +95,13 @@ INSERT INTO `items` (`ID`, `Titre`, `Photos`, `Description`, `Video`, `Categorie
 
 DROP TABLE IF EXISTS `logins`;
 CREATE TABLE IF NOT EXISTS `logins` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `statut` varchar(255) NOT NULL,
   `identifiant` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `connected` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `logins`
@@ -79,10 +110,9 @@ CREATE TABLE IF NOT EXISTS `logins` (
 INSERT INTO `logins` (`ID`, `statut`, `identifiant`, `password`, `connected`) VALUES
 (1, 'administrateur', 'JeanMich', 'motdepasse123', 0),
 (2, 'vendeur', 'thib96', 'azerty98', 0),
-(3, 'client', 'maxence', 'mariejoseph', 0),
-(8, 'vendeur', 'vendeur', 'vendeur', 0),
-(9, 'vendeur', 'jeje', 'dede', 0),
-(10, 'vendeur', 'lauraM', 'laura', 0);
+(8, 'client', 'maxence', 'mariejoseph', 0),
+(9, 'client', 'vic', '123', 0),
+(10, 'client', 'ngolo', 'carambar', 0);
 
 -- --------------------------------------------------------
 
@@ -146,15 +176,7 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `fond` varchar(250) NOT NULL,
   `photo` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `vendeur`
---
-
-INSERT INTO `vendeur` (`id`, `nom`, `mail`, `pseudo`, `fond`, `photo`) VALUES
-(40, 'meller', 'jeje', 'dede', 'vÃ©lo2.jpeg', 'vÃ©lo.jpeg'),
-(41, 'lauraN', 'lauraM', 'laura', 'raquette3.jpg', 'raquette2.jpg');
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
