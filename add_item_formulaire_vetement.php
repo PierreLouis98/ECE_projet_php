@@ -17,18 +17,20 @@ $('.header').height($(window).height());
 });
 </script>
 </head>
-	<?php // AJOUTER UN ITEM DANS ITEM ET vetements  
+	<?php // AJOUTER UN ITEM DANS item et vetement
 
-			// musicslivres
-			$titre = isset($_POST["titre"])? $_POST["titre"] : "";
-			$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
-			$date = isset($_POST["date"])? $_POST["date"] : "";
+			// vetement
+			$couleur = isset($_POST["titre"])? $_POST["titre"] : "";
+			$sexe = isset($_POST["Femme"])? "Femme" : "Homme";
+			$marque = isset($_POST["marque"])? $_POST["marque"] : "";
+			$taille = isset($_POST["taille"])? $_POST["taille"] : "";
 			// item
-			$video = isset($_POST["video"])? $_POST["video"] : "";
+			$titre = isset($_POST["titre"])? $_POST["titre"] : "";
+			$video = "";
 			$photo = isset($_POST["photo"])? $_POST["photo"] : "";
 			$pho = basename($photo);
 			$desc = isset($_POST["description"])? $_POST["description"] : "";
-			$categorie = "Livres";
+			$categorie = "Vetements";
 			$prix = isset($_POST["prix"])? $_POST["prix"] : "";
 			
 			$database = "ece_amazon";
@@ -42,7 +44,7 @@ $('.header').height($(window).height());
 					$result = mysqli_query($db_handle, $sql);
 					$data = mysqli_fetch_assoc($result);
 					$id = $data['ID'];
-					$sql = "INSERT INTO musicslivres(id, auteur, titre, sortie) VALUES('$id', '$auteur', '$titre', '$date')";
+					$sql = "INSERT INTO vetements(id, couleur, taille, marque, sexe) VALUES('$id', '$couleur', '$taille', '$marque', '$sexe')";
 					$result = mysqli_query($db_handle, $sql);
 					
 				} 
@@ -77,95 +79,64 @@ href="login.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
-
-
-
-
-<div class="row">
-
-
-
-
-<!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
- 
-
-
-<div id="conteneur">
-    <fieldset>
-        <legend> Ajout Items vetements </legend>
-		<form action="login1.php" method="post" >
-		<table>
-            <p>
-                <label for="catnom"> Type  </label>
-                <input class="text" type="text" name="catnom" id="catnom" value=""/>
-            </p>
-            <p>
-                <label for="catdesct"> Marque </label>                   
-                <input class="text" type="text" name="catdesct" id="catdesct" value=""/>
-            </p>
-            <p>
-                <label for="catdesct"> Description </label>                   
-                <TEXTAREA class="text" rows=4 cols=40></TEXTAREA>
-            </p>
-			<p>
-               <label> Homme
-<input type="radio" name="Homme" value="Homme">
-</label>
-<label> Femme
-<input type="radio" name="Femme" value="Femme">
-</label>
-            </p>
-			
-			
-			
-			<p> 
-                <select name="taille" id="catdesct" >
-<option>XS</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>XXL</option>
-
-</select>
-
-            </p>
-			<p> 
-			
-     
-     <label for="mon_fichier"> <br> Photo de l'article ( max. 1 Mo) :</label><br /> <br/> 
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br />
-	 
-	 <label for="mon_fichier"> Autre Photo de l'Article:</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br>
-	 
-            </p>
-            <p>
-                <input type="submit" name="button1" value="Soumettre"/>
-            </p>
-		</table>
-		</form>
-    </fieldset>
+	<div class="row">
+		<div id="conteneur">
+			<fieldset>
+				<legend> Ajout Items vetements </legend>
+				<form method="post" >
+				<table>
+					<p>
+							<label for="titre"> Nom  </label>
+							<input class="text" type="text" name="titre" id="titre" value=""/>
+					</p>
+					<p>
+						<label for="marque"> Marque </label>                   
+						<input class="text" type="text" name="marque" id="marque" value=""/>
+					</p>
+					<p>
+						<label for="couleur"> Couleur </label>                   
+						<input class="text" type="text" name="couleur" id="couleur" value=""/>
+					</p>
+					<p>
+						<label for="description"> Description </label>                   
+						<input class="text" name="description"/>
+					</p>
+					<p>
+					   <label> Homme
+						<input type="radio" name="Homme" value="Homme">
+						</label>
+						<label> Femme
+						<input type="radio" name="Femme" value="Femme">
+						</label>
+					</p>
+					<p> 
+						<select name="taille" id="taille">
+							<option>XS</option>
+							<option>S</option>
+							<option>M</option>
+							<option>L</option>
+							<option>XL</option>
+							<option>XXL</option>
+						</select>
+					</p>
+					</p>
+					<label for="photo"> <br> Photo de l'article ( max. 1 Mo) :</label><br />
+					<input type="file" name="photo">
+					<p>
+						<label for="prix"> Prix </label>                   
+						<input type="text" name="prix" value="0€" />
+					</p>
+					<p> 
+						<input type="submit" name="button1" value="Soumettre"/>
+					</p>
+				</table>
+				</form>
+			</fieldset>
+		</div>
+	</div>
 </div>
 
 
-</div>
-
-
-
-</div>
 <footer class="page-footer">
 <div class="container">
 <div class="row">
