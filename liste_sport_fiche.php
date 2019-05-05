@@ -45,7 +45,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <?php
 
 $database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', 'root');
+$db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
 
@@ -67,7 +67,7 @@ if($db_found)
 			<h1><?php echo $data["Titre"];?></h1>
 			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
 			<!-- <h5><?php echo $description_finale;?></h5> -->
-			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>" onclick="window(this.href, '', 
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
 			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
 			<a href="liste_livre_fiche.php"><h4 style="margin-left: 40px; color:#000000;" >Retour</h4></a>
@@ -91,7 +91,7 @@ if($db_found)
 			<div style="margin-left:100px;">
 				<a href="?show=<?php echo $data["Titre"];?>"><h2 style="color:#AB0606;"><?php echo $data["Titre"];?></h2></a>
 				<h3 style="color:#AB0606;"><?php echo $data["Prix"];?> € </h3>	
-				<a href="Panier.php"><h4>Ajouter au panier</h4></a>
+				
 			</div>
 			<br/><br/><br/>	
 			<?php 

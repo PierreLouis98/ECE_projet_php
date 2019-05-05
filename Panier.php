@@ -1,4 +1,45 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+<title>TP sur Bootstrap</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script type="text/javascript">
+$(document).ready(function(){
+$('.header').height($(window).height());
+});
+</script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md">
+<a class="navbar-brand" href="https://sites.google.com/site/tpe44lesillusionsoptiques/info-presse-classeur/le-triangle-de-penrose"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
+<button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="main-navigation">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link"
+href="Categorie.php">Catégories</a></li>
+<li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
+<li class="nav-item"><a class="nav-link"
+href="login.php">Vendre</a></li>
+<li class="nav-item"><a class="nav-link"
+href="login.php">Administrateur</a></li>
+<li class="nav-item"><a class="nav-link"
+href="login.php">Mon Compte</a></li>
+<a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
+<a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
+</ul>
+</div>
+</nav>
 <?php
 session_start();
 include_once("traitement_Panier.php");
@@ -70,7 +111,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 <body>
 
 <form method="post" action="Panier.php">
-<table style="width: 400px">
+<table style="width: 1200px; height: 300px;">
 	<tr>
 		<td colspan="4">Votre panier</td>
 	</tr>
