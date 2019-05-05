@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 04 mai 2019 à 16:23
+-- Généré le :  Dim 05 mai 2019 à 08:30
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `Prix` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `ID` (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `items`
@@ -52,7 +52,9 @@ INSERT INTO `items` (`ID`, `Titre`, `Photos`, `Description`, `Video`, `Categorie
 (4, 'Levi\'s Engineered - Jean fusele coupe classique a ourlet torsade - Delavage moyen', 'jean.jpg jean2.jpg jean3.jpg', 'Voici un excellent vêtement de jour\r\nTaille classique\r\nDélavage moyen\r\nFermeture à boutons\r\nPoches fonctionnelles\r\nOurlet torsadé\r\nCoupe fuselée\r\nCoupe ample au niveau des cuisses puis se resserrant des genoux aux chevilles', 'jean.mp4', 'Vetements', '96'),
 (5, 'Freedom', 'Freedom.jpg', 'Musique haute qualité', '', 'Musiques', '1'),
 (6, 'La chute', 'chute.jpg', 'La Chute est en effet le récit d’une confession, d’un homme à un autre dans un bar d’Amsterdam, sous la forme d’un monologue. Jean-Baptiste Clamence, ancien avocat parisien, relate l’évènement qui a bouleversé sa vie. Avant cet évènement, Clamence se décrit comme un parfait égoïste, amoureux de lui-même. Jusqu’au soir où, rentrant chez lui, il passe sur un pont duquel il entend une jeune fille se jeter. Il ne lui porte pas secours. A partir de ce moment-là, la culpabilité gonfle au point de devenir une obsession. Cet évènement éclaire d’un jour nouveau l’ensemble de son existence, qu’il juge alors comme inutile et prétentieuse : il ne se supporte plus et vit emmuré dans le remords.', '', 'Livres', '14'),
-(27, 'La Religion', 'religion.jpg', '', '', 'Livres', '12');
+(29, 'Let it be', 'letitbe.jpg', 'When I find myself in times of trouble, Mother Mary comes to me...', '', 'Musiques', '1'),
+(30, 'Ballon', 'ballon.jpg', 'BALLON PARIS SAINT GERMAIN', '', 'Sports', '24,90'),
+(33, 'Robe de nuit', 'robe.jpg', 'Chemise de nuit adaptÃ©e manches mi-longues avec ouverture dans le dos, facile Ã  enfiler, ne demande pas de manipulations.', '', 'Vetements', '46');
 
 -- --------------------------------------------------------
 
@@ -99,17 +101,33 @@ CREATE TABLE IF NOT EXISTS `musicslivres` (
 --
 
 INSERT INTO `musicslivres` (`id`, `auteur`, `titre`, `sortie`) VALUES
-(1, 'Charles', 'Le décès', '2019-05-08'),
-(4, 'jkwjdhf', 'kjnzfek', 'kjnwdv'),
-(6, 'Albert Camus', 'La chute', '1956'),
-(4, 'h,b', 'jhg,b', 'jhn'),
-(5, 'kaka', 'kaka', '2009'),
-(20, 'kjh', 'rg', ''),
-(21, 'pipi', 'pipipipi', 'pipi'),
-(32, '', 'kiki', ''),
-(25, '', 'kaka', ''),
-(26, 'tim willocks', 'la religion', '2009'),
-(27, 'Tim Willocks', 'La Religion', '2009');
+(6, 'Albert Camus', 'La Chute', '1956'),
+(29, 'The Beatles', 'Let it be', '2009'),
+(5, 'Pharrell Williams', 'Freedom', '2017');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sports`
+--
+
+DROP TABLE IF EXISTS `sports`;
+CREATE TABLE IF NOT EXISTS `sports` (
+  `id` int(50) NOT NULL,
+  `marque` varchar(250) NOT NULL,
+  `couleur` varchar(250) NOT NULL,
+  `sport` varchar(250) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `sports`
+--
+
+INSERT INTO `sports` (`id`, `marque`, `couleur`, `sport`) VALUES
+(1, 'Babola', 'Noir', 'Tennis'),
+(2, 'Decathlon', 'Bleu', 'Velo'),
+(3, 'echec Master', 'Marron', 'Echec'),
+(30, 'Nike', 'Ballon', 'Foot');
 
 -- --------------------------------------------------------
 
@@ -128,13 +146,29 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Déchargement des données de la table `vendeur`
+-- Structure de la table `vetements`
 --
 
-INSERT INTO `vendeur` (`id`, `nom`, `mail`, `pseudo`, `fond`, `photo`) VALUES
-(39, 'vendeur', 'vendeur', 'vendeur', 'addlivre.jpg', 'addsport.jpg'),
-(35, 'jqj', 'juqu', 'jqj', 'addlivre.jpg', 'addmusique.jpg');
+DROP TABLE IF EXISTS `vetements`;
+CREATE TABLE IF NOT EXISTS `vetements` (
+  `id` int(50) NOT NULL AUTO_INCREMENT,
+  `couleur` varchar(250) NOT NULL,
+  `taille` varchar(250) NOT NULL,
+  `marque` varchar(250) NOT NULL,
+  `sexe` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vetements`
+--
+
+INSERT INTO `vetements` (`id`, `couleur`, `taille`, `marque`, `sexe`) VALUES
+(4, 'Bleu', 'M', 'Levis', 'Homme'),
+(33, 'Robe de nuit', 'XL', 'Livalys', 'Homme');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
