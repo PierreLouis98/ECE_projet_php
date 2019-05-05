@@ -44,7 +44,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 
 <?php
 $database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost', 'root', 'root');
 $db_found = mysqli_select_db($db_handle, $database);
 
 if($db_found)
@@ -104,7 +104,7 @@ else {
 mysqli_close($db_handle);
 ?>
 	
-<footer class="page-footer3">
+<footer class="page-footer2">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">

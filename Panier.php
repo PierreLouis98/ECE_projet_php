@@ -106,6 +106,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
+<div style="margin-top:50px; margin-left:0px;">
 <title>Votre panier</title>
 </head>
 <body>
@@ -121,7 +122,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 		<td>Prix Unitaire</td>
 		<td>Action</td>
 	</tr>
-
+</div>
 
 	<?php
 	if (creationPanier())
@@ -156,7 +157,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	      echo "</td></tr>";
 
 	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
 		 ?>
 		 
 		 <a href="Valider_commande.php"><h4> Passer la commande </h4></a>
@@ -175,7 +175,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 </body>
 </html>
 
-<footer class="page-footer3">
+<footer class="page-footer">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">

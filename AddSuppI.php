@@ -49,7 +49,7 @@ session_start ();
 if($_SESSION['connected'] == 2){
 	?>
 	
-<body style="background: url('<?php echo $_SESSION['photoprofil'];?>');background-repeat: no-repeat;">
+<body style="background: url('<?php echo $_SESSION['photoprofil'];?>');background-repeat: no-repeat;  background-size:cover;">
 </body>
 <?php
 }
@@ -61,7 +61,7 @@ if($_SESSION['connected'] == 2){
 if($_SESSION['connected'] == 2){
 	?>
 	
-<img style="margin-left: 0px; margin-bottom: 0px; height: 80px; width: 80px;" src="<?php echo $_SESSION['photofond'];?>">
+<img  style="margin-left: 0px; margin-bottom: 0px; height: 80px; width: 80px;" src="<?php echo $_SESSION['photofond'];?>">
 <h1><?php echo $_SESSION['login'];?></h1>
 
 <?php 

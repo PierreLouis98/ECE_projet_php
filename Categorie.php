@@ -128,8 +128,8 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
 info@webDynamique.ece.fr <br>
-+33 01 02 03 04 05 <br>
-+33 01 03 02 05 04
+06 22 61 69 40 <br>
+06 13 99 67 66
 </h4>
 
 </div>
