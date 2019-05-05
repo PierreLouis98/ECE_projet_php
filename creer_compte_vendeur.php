@@ -34,7 +34,11 @@ $('.header').height($(window).height());
 			if (isset($_POST["button1"])){
 				$sql = "INSERT INTO vendeur(nom, mail, pseudo, fond, photo) VALUES('$nom', '$mail', '$pseudo', '$fo', '$pro')";
 				$result = mysqli_query($db_handle, $sql);
-				$sql = "INSERT INTO logins(statut, identifiant, password, connected) VALUES('$statut', '$mail', '$pseudo', '$connected')";
+				$sql = "SELECT * FROM vendeur WHERE nom='$nom'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				$id = $data['id'];
+				$sql = "INSERT INTO logins(ID, statut, identifiant, password, connected) VALUES('$id', '$statut', '$mail', '$pseudo', '$connected')";
 				$result = mysqli_query($db_handle, $sql);
 			}
 		}			
