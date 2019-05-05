@@ -42,75 +42,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </nav>
 
 <?php
-
-$database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', '');
-$db_found = mysqli_select_db($db_handle, $database);
-$tmp=0;
-
-
-
-if($db_found)
-{
-	if(isset($_GET['show']))
-	{
-		$product=$_GET['show'];
-		$sql = "SELECT * from items WHERE Titre='$product'";
-		$result = mysqli_query($db_handle, $sql);
-		$data = mysqli_fetch_assoc($result);
-		$description=$data["Description"];
-		//$description_finale=wordwrap($description,200,'<br />',false);
-		?>
-		<br>
-		<div  style="margin-left: 750px; color:#AB0606; margin-top: 50px;">
-			<img style="margin-left: -700px; margin-bottom: -300px;" src="<?php echo $data["Photos"];?>">
-			<h1><?php echo $data["Titre"];?></h1>
-			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
-			<!-- <h5><?php echo $description_finale;?></h5> -->
-			
-			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
-'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
-			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
-			<a href="liste_livre_fiche.php"><h4 style="margin-left: 40px; color:#000000;" >Retour</h4></a>
-		</div><br>
-		<?php
-	}
-	else
-	{	
-		?><div style="margin-left: 40px; margin-top: 40px; " ><h1 > Nos meilleurs ventes : </h1></div><?php
-		$sql = "SELECT * from items WHERE Categorie='Livres'";
-		$result = mysqli_query($db_handle, $sql);
-		while($data = mysqli_fetch_assoc($result))
-		{
-			$length=200;
-			$description=$data["Description"];
-			$new_description=substr($description,0,$length)."...";
-			$description_finale=wordwrap($new_description,75,'<br />',false);
-			?>
-			<br><br>
-			
-			<div style="margin-left:100px;">
-				<a href="?show=<?php echo $data["Titre"];?>"><h2 style="color:#AB0606;"><?php echo $data["Titre"];?></h2></a>
-				<h3 style="color:#AB0606;"><?php echo $data["Prix"];?> € </h3>	
-				
-			</div>
-			<br/><br/><br/>	
-			<?php 
-			
-			
-			if(data["Quantite"] >= $tmp){
-			$tmp=data["Quantite"];
-			}
-			
-		}
-	}
-		/*else {
-			echo "Database not found";
-		}*/
-		mysqli_close($db_handle);
-	}
-	
-	?>
+?>
 	
 	<footer class="page-footer2">
 <div class="container">
