@@ -120,7 +120,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 		<td>Libellé</td>
 		<td>Quantité</td>
 		<td>Prix Unitaire</td>
-		<td>Action</td>
+		<td>Supprimer</td>
 	</tr>
 </div>
 

@@ -57,7 +57,7 @@ $('.header').height($(window).height());
 						  header('location: merci.php');
 					   }
 				}
-				else {	echo "Données bancaires incorrectes";	}
+				else {	echo '<script type="text/javascript">window.alert("Données bancaires incorrectes");</script>';}
 			}
 			else {echo "non cliqué";}
 		}
