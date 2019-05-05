@@ -67,6 +67,7 @@ if($db_found)
 			<h1><?php echo $data["Titre"];?></h1>
 			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
 			<!-- <h5><?php echo $description_finale;?></h5> -->
+			<h1><?php echo $data["Description"];?></h1>
 			
 			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>&amp;ph=<?php echo $data["Photos"];?>" onclick="window(this.href, '', 
 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>

@@ -51,6 +51,11 @@ href="verif_acheteur.php">Mon Compte</a></li>
 			if(isset($_GET['show']))
 			{
 				$product=$_GET['show'];
+				$sql = "SELECT * FROM vendeur WHERE nom='$product'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				$sql = "DELETE FROM items WHERE id_vend='".$data['id']."'";
+				$result = mysqli_query($db_handle, $sql);
 				$sql = "DELETE FROM vendeur WHERE nom='$product'";
 				$result = mysqli_query($db_handle, $sql);
 				echo "Delete successful.";
