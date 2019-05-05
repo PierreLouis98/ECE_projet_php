@@ -45,8 +45,10 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <div> Cliquez sur l'item que vous souhaitez Supprimer
 <?php // CODE PHP CORRESPONSDANT
 		$database = "ece_amazon";
-		$db_handle = mysqli_connect('localhost', 'root', 'root');
+		$db_handle = mysqli_connect('localhost', 'root', '');
 		$db_found = mysqli_select_db($db_handle, $database);
+		session_start ();
+		$id = 0;
 		
 		if ($db_found) 
 		{
@@ -59,7 +61,12 @@ href="verif_acheteur.php">Mon Compte</a></li>
 				$result = mysqli_query($db_handle, $sql);
 				echo "Delete successful.";
 			}
-			$sql = "SELECT * FROM items WHERE Categorie='Sports'";
+			$mail = $_SESSION['login'];
+			$sql = "SELECT * FROM vendeur WHERE mail='$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$id = $data['id'];
+			$sql = "SELECT * FROM items WHERE Categorie='Sports' AND id_vend='$id'";
 			$result = mysqli_query($db_handle, $sql);
 			while($data = mysqli_fetch_assoc($result))
 			{
