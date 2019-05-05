@@ -22,7 +22,7 @@ $('.header').height($(window).height());
 
 <nav class="navbar navbar-expand-md">
 <a class="navbar-brand" href="https://sites.google.com/site/tpe44lesillusionsoptiques/info-presse-classeur/le-triangle-de-penrose"><img class="logo" src="logo.png" height='75' width='90'/><br>	PENROSE</a>
-<button class="navbar-toggler navbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
+<button class="navbar-toggler naxvbar-dark" type="button" datatoggle="collapse" data-target="#main-navigation" >
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="main-navigation">

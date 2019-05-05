@@ -43,19 +43,18 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </nav>
 
 <?php
-
 $database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', 'root');
+$db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
-
-
 
 if($db_found)
 {
 	if(isset($_GET['show']))
 	{
+		echo "TEST2";
 		$product=$_GET['show'];
-		$sql = "SELECT * from items WHERE Titre='$product'";
+		echo $product;
+		$sql = "SELECT * FROM items WHERE Titre='$product'";
 		$result = mysqli_query($db_handle, $sql);
 		$data = mysqli_fetch_assoc($result);
 		$description=$data["Description"];
@@ -67,8 +66,7 @@ if($db_found)
 			<h1><?php echo $data["Titre"];?></h1>
 			<h2 style="margin-left: 40px;"> <?php echo $data["Prix"];?> €</h2>
 			<!-- <h5><?php echo $description_finale;?></h5> -->
-			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>" onclick="window(this.href, '', 
-'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+			<a href="Panier.php?action=ajout&amp;l=<?php echo $data["Titre"];?>&amp;q=1&amp;p=<?php echo $data["Prix"];?>" onclick="window(this.href, '', 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
 			<!--<a href="verificationCarteAcheteur.php"><h3>Acheter en un clic</h3></a>  -->
 			<a href="liste_livre_fiche.php"><h4 style="margin-left: 40px; color:#000000;" >Retour</h4></a>
 		</div><br>
@@ -77,7 +75,7 @@ if($db_found)
 	else
 	{	
 		?><div style="margin-left: 40px; margin-top: 40px; " ><h1 > Vêtements : </h1></div><?php
-		$sql = "SELECT * from items WHERE Categorie='Vetements'";
+		$sql = "SELECT * FROM items WHERE Categorie='Vetements'";
 		$result = mysqli_query($db_handle, $sql);
 		while($data = mysqli_fetch_assoc($result))
 		{
@@ -95,17 +93,17 @@ if($db_found)
 			</div>
 			<br/><br/><br/>	
 			<?php 
+			echo "TEST1";
 		}
 	}
-		/*else {
-			echo "Database not found";
-		}*/
-		mysqli_close($db_handle);
-	}
+}
+else {
+	echo "Database not found";
+}
+mysqli_close($db_handle);
+?>
 	
-	?>
-	
-	<footer class="page-footer3">
+<footer class="page-footer3">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">
