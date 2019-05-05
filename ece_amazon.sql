@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 05 mai 2019 à 20:00
+-- Généré le :  Dim 05 mai 2019 à 20:22
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -85,7 +85,6 @@ INSERT INTO `items` (`ID`, `Titre`, `Photos`, `Description`, `Video`, `Categorie
 (4, 'Jean fusele classique a ourlet torsade', 'jean.jpg', 'Voici un excellent vêtement de jour\r\nTaille classique\r\nDélavage moyen\r\nFermeture à boutons\r\nPoches fonctionnelles\r\nOurlet torsadé\r\nCoupe fuselée\r\nCoupe ample au niveau des cuisses puis se resserrant des genoux aux chevilles', 'jean.mp4', 'Vetements', '96', 0, 43),
 (5, 'Freedom', 'Freedom.jpg', 'Musique haute qualité', '', 'Musiques', '1', 1, 43),
 (6, 'La chute', 'chute.jpg', 'La Chute est en effet le récit d’une confession, d’un homme à un autre dans un bar d’Amsterdam, sous la forme d’un monologue. Jean-Baptiste Clamence, ancien avocat parisien, relate l’évènement qui a bouleversé sa vie. Avant cet évènement, Clamence se décrit comme un parfait égoïste, amoureux de lui-même. Jusqu’au soir où, rentrant chez lui, il passe sur un pont duquel il entend une jeune fille se jeter. Il ne lui porte pas secours. A partir de ce moment-là, la culpabilité gonfle au point de devenir une obsession. Cet évènement éclaire d’un jour nouveau l’ensemble de son existence, qu’il juge alors comme inutile et prétentieuse : il ne se supporte plus et vit emmuré dans le remords.', '', 'Livres', '14', 7, 42),
-(36, 'kiki', '', '', '', 'Livres', '0â‚¬', 0, 42),
 (33, 'Robe de nuit', 'robe.jpg', 'Chemise de nuit adaptÃ©e manches mi-longues avec ouverture dans le dos, facile Ã  enfiler, ne demande pas de manipulations.', '', 'Vetements', '46', 1, 43),
 (37, 'La Religion', 'religion.png', 'TrÃ¨s beau livre', '', 'Livres', '12', 0, 42);
 

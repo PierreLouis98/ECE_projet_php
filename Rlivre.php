@@ -63,11 +63,15 @@ href="verif_acheteur.php">Mon Compte</a></li>
 				echo "Delete successful.";
 			}
 			$mail = $_SESSION['login'];
-			$sql = "SELECT * FROM vendeur WHERE mail='$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$id = $data['id'];
-			$sql = "SELECT * FROM items WHERE Categorie='Livres' AND id_vend='$id'";
+			if ($mail != "JeanMich")
+			{
+				$sql = "SELECT * FROM vendeur WHERE mail='$mail'";
+				$result = mysqli_query($db_handle, $sql);
+				$data = mysqli_fetch_assoc($result);
+				$id = $data['id'];
+			}
+			$sql = "SELECT * FROM items WHERE Categorie='Livres'";
+			if ($mail != "JeanMich") {$sql .= " AND id_vend='$id'"; }
 			$result = mysqli_query($db_handle, $sql);
 			while($data = mysqli_fetch_assoc($result))
 			{
