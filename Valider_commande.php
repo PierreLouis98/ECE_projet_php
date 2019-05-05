@@ -39,7 +39,6 @@ $('.header').height($(window).height());
 				{	
 					$nbArticles=count($_SESSION['panier']['libelleProduit']);
 					if ($nbArticles <= 0){ 
-					alert("Votre panier est vide, vous ne pouvez pas passez de commandes");
 					header ('location : Panier.php');
 					
 
@@ -48,25 +47,14 @@ $('.header').height($(window).height());
 					   {
 						   for ($i=0 ;$i < $nbArticles ; $i++)
 						  {
-							//$sql = "SELECT * FROM items WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
-							//$result = mysqli_query($db_handle, $sql);
-							//$data = mysqli_fetch_assoc($result);
-							//$cate = $data['Categorie'];
-						    $sql = "DELETE FROM items WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
-						    $result = mysqli_query($db_handle, $sql);
-							
-							
-							
-							
-							
-						    //$sql = "DELETE FROM ". ." WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
+							$sql = "UPDATE items SET vendu=(vendu+". $_SESSION['panier']['qteProduit'][$i] .") WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
+							$result = mysqli_query($db_handle, $sql);
+						    //$sql = "DELETE FROM items WHERE Titre='". $_SESSION['panier']['libelleProduit'][$i] ."'";
 						    //$result = mysqli_query($db_handle, $sql);
 						  }
-						  
 						  session_unset();
 						  session_destroy();
 						  header('location: merci.php');
-						  
 					   }
 				}
 				else {	echo "Données bancaires incorrectes";	}
