@@ -51,9 +51,9 @@ if($db_found)
 {
 	if(isset($_GET['show']))
 	{
-		echo "TEST2";
+		
 		$product=$_GET['show'];
-		echo $product;
+		
 		$sql = "SELECT * FROM items WHERE Titre='$product'";
 		$result = mysqli_query($db_handle, $sql);
 		$data = mysqli_fetch_assoc($result);
@@ -94,7 +94,7 @@ if($db_found)
 			</div>
 			<br/><br/><br/>	
 			<?php 
-			echo "TEST1";
+			
 		}
 	}
 }

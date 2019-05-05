@@ -43,7 +43,13 @@ href="verif_acheteur.php">Mon Compte</a></li>
 </nav>
 
 <div class="container features">
+<?php
+session_start ();
 
+
+?>
+
+<img style="margin-left: 0px; margin-bottom: 0px; height: 80px; width: 80px;" src="<?php echo $_SESSION['photofond'];?>">
 
 <div class="row">
 <div class="col-xs-6 col-sm-50">

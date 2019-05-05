@@ -70,9 +70,16 @@ $db_found = mysqli_select_db($db_handle, $database);
 				
 				// on la démarre :)
 		session_start ();
+		$sql = "SELECT * FROM vendeur WHERE mail='$login'";
+		$result = mysqli_query($db_handle, $sql);
+		$data = mysqli_fetch_assoc($result);
 		// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
 		$_SESSION['login'] = $login;
 		$_SESSION['connected'] = 2;
+		$_SESSION['photoprofil'] = $data['photo'];
+		$_SESSION['photofond'] =  $data['fond'];
+		echo  $data['photo'];
+		
 		header ('Location: AddSuppI.php');
 			}
 			else {$_SESSION['connected'] = 0;
