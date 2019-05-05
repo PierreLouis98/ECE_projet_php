@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 05 mai 2019 à 08:49
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Généré le :  Dim 05 mai 2019 à 11:04
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `password` varchar(255) NOT NULL,
   `connected` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `logins`
@@ -80,7 +80,9 @@ INSERT INTO `logins` (`ID`, `statut`, `identifiant`, `password`, `connected`) VA
 (1, 'administrateur', 'JeanMich', 'motdepasse123', 0),
 (2, 'vendeur', 'thib96', 'azerty98', 0),
 (3, 'client', 'maxence', 'mariejoseph', 0),
-(8, 'vendeur', 'vendeur', 'vendeur', 0);
+(8, 'vendeur', 'vendeur', 'vendeur', 0),
+(9, 'vendeur', 'jeje', 'dede', 0),
+(10, 'vendeur', 'lauraM', 'laura', 0);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,15 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `fond` varchar(250) NOT NULL,
   `photo` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`id`, `nom`, `mail`, `pseudo`, `fond`, `photo`) VALUES
+(40, 'meller', 'jeje', 'dede', 'vÃ©lo2.jpeg', 'vÃ©lo.jpeg'),
+(41, 'lauraN', 'lauraM', 'laura', 'raquette3.jpg', 'raquette2.jpg');
 
 -- --------------------------------------------------------
 

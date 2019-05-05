@@ -29,21 +29,21 @@ $('.header').height($(window).height());
 href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Vendre</a></li>
+href="verif_vendeur.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Administrateur</a></li>
+href="verif_admi.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Mon Compte</a></li>
+href="verif_acheteur.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 <a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
 </div>
 </nav>
 
-<div>  LISTE VENDEUR <br>
+<div>  Cliquez sur le Vendeur que vous souhaitez Supprimer <br>
 	<?php // CODE PHP CORRESPONSDANT
 		$database = "ece_amazon";
-		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_handle = mysqli_connect('localhost', 'root', 'root');
 		$db_found = mysqli_select_db($db_handle, $database);
 		
 		if ($db_found) 

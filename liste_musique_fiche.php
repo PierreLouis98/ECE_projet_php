@@ -45,7 +45,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <?php
 
 $database = "ece_amazon"; 
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost', 'root', 'root');
 $db_found = mysqli_select_db($db_handle, $database);
 
 
@@ -105,7 +105,7 @@ if($db_found)
 	
 	?>
 	
-	<footer class="page-footer3">
+	<footer class="page-footer">
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8 col-sm-12">
@@ -114,9 +114,9 @@ if($db_found)
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
-info@webDynamique.ece.fr <br>
-+33 01 02 03 04 05 <br>
-+33 01 03 02 05 04
+penrose@edu.ece.fr <br>
+06 22 61 69 40 <br>
+06 13 99 67 66
 </h4>
 
 </div>

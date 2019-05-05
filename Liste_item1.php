@@ -30,11 +30,11 @@ $('.header').height($(window).height());
 href="Categorie.php">Catégories</a></li>
 <li class="nav-item"><a class="nav-link" href="Venteflash.php">Vente Flash</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Vendre</a></li>
+href="verif_vendeur.php">Vendre</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Administrateur</a></li>
+href="verif_admi.php">Administrateur</a></li>
 <li class="nav-item"><a class="nav-link"
-href="login.php">Mon Compte</a></li>
+href="verif_acheteur.php">Mon Compte</a></li>
 <a class="navbar-brand" href="Panier.php"><img class="panier" src="panier.png" height='70' width='70'> </a>
 <a class="navbar-brand" href="logout.php"><img class="deco" src="Deco.png" height='50' width='50'> </a>
 </ul>
@@ -84,9 +84,9 @@ mysqli_close($db_handle);
 
 <h4 class="contact">Contact<br> <br>
 37, quai de Grenelle, 75015 Paris, France <br>
-info@webDynamique.ece.fr <br>
-+33 01 02 03 04 05 <br>
-+33 01 03 02 05 04
+penrose@edu.ece.fr <br>
+06 22 61 69 40 <br>
+06 13 99 67 66
 </h4>
 
 </div>
