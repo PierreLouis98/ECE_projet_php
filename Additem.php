@@ -49,11 +49,12 @@ session_start ();
 if($_SESSION['connected'] == 2){
 	?>
 	
-<body style="background: url('<?php echo $_SESSION['photoprofil'];?>');background-repeat: no-repeat;">
+<body style="background: url('<?php echo $_SESSION['photoprofil'];?>');background-repeat: no-repeat; background-size:cover;"">
 </body>
 <?php
 }
 ?>
+
 <div class="container features">
 
 <?php 

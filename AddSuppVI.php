@@ -48,7 +48,7 @@ href="verif_acheteur.php">Mon Compte</a></li>
 <div class="row">
 <div class="col-xs-2 col-sm-50">
 <h3 class="feature-title"> Ajouter Vendeur</h3>
-<a href="Addvendeur.php" ><img src="addvendeur.jpg" height='250' width='400' > </a> <br><br><br>
+<a href="creer_compte_vendeur.php" ><img src="addvendeur.jpg" height='250' width='400' > </a> <br><br><br>
 </div>
 
 

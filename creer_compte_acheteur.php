@@ -36,7 +36,7 @@ $('.header').height($(window).height());
 		$cardnumber = isset($_POST["cardnumber"])? $_POST["cardnumber"] : "";
 	// connexion
 		$database = "ece_amazon";
-		$db_handle = mysqli_connect('localhost', 'root', '');
+		$db_handle = mysqli_connect('localhost', 'root', 'root');
 		$db_found = mysqli_select_db($db_handle, $database);
 		
 		if ($db_found) {
